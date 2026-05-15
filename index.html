@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZenuwKalmer • Paniek & Angst</title>
   <meta name="description" content="Herstel van paniek en angst - door Joris">
+  <link rel="manifest" href="manifest.json">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
   <style>
@@ -15,47 +16,94 @@
 </head>
 <body class="bg-slate-50 min-h-screen">
 
-  <header class="header text-white py-5 shadow-md">
-    <div class="max-w-2xl mx-auto px-6 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-white rounded-2xl flex items-center justify-center text-3xl">🧠</div>
-        <div>
-          <span class="font-bold text-2xl">Paniek & Angst</span>
-          <p class="text-xs opacity-90 -mt-1">ZenuwKalmer</p>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <div class="max-w-2xl mx-auto px-6 pt-8">
-    <div class="flex items-center gap-4 mb-8">
-      <img src="https://files.catbox.moe/0v4r2k.jpg" alt="Joris" class="w-20 h-20 rounded-2xl object-cover border-2 border-white shadow">
+<header class="header text-white py-5 shadow-md">
+  <div class="max-w-2xl mx-auto px-6 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-white rounded-2xl flex items-center justify-center text-3xl">🧠</div>
       <div>
-        <h2 class="text-2xl font-semibold">Hallo, ik ben Joris</h2>
-        <p class="text-teal-600">Ik heb het zelf overwonnen</p>
+        <span class="font-bold text-2xl">Paniek & Angst</span>
+        <p class="text-xs opacity-90 -mt-1">ZenuwKalmer</p>
       </div>
     </div>
-
-    <div class="card p-8 rounded-3xl mb-10">
-      <h3 class="font-semibold text-lg mb-4">Mijn verhaal</h3>
-      <p class="text-slate-700 leading-relaxed">
-        Een paar jaar geleden zat ik vast in paniekaanvallen, derealisatie en constante angst.
-        Uiteindelijk vond ik de weg terug via Claire Weekes, Floating en de AWARE-methode.
-      </p>
-      <p class="text-slate-700 leading-relaxed mt-4">
-        <strong>Mijn missie:</strong> Mensen helpen herstellen zonder dat het veel geld kost.
-      </p>
-    </div>
-
-    <div class="card p-8 rounded-3xl mb-8">
-      <p class="text-teal-700 font-medium mb-3">💡 Tip van vandaag</p>
-      <p class="text-slate-700">Laat de angst er zijn. Vecht er niet tegen. Float erdoorheen.</p>
-    </div>
-
-    <button onclick="alert('Oefening gestart! 🎙️ Audio-begeleiding komt binnenkort met mijn stem.')"
-      class="w-full bg-teal-600 hover:bg-teal-700 text-white py-5 rounded-3xl font-medium text-lg shadow">
-      🌊 Start Floating Oefening
-    </button>
   </div>
+</header>
+
+<div class="max-w-2xl mx-auto px-6 pt-8 pb-20">
+
+  <div class="flex items-center gap-4 mb-8">
+    <img src="https://files.catbox.moe/0v4r2k.jpg" alt="Joris" class="w-20 h-20 rounded-2xl object-cover border-2 border-white shadow">
+    <div>
+      <h2 class="text-2xl font-semibold">Hallo, ik ben Joris</h2>
+      <p class="text-teal-600">Ik heb het zelf overwonnen</p>
+    </div>
+  </div>
+
+  <!-- Navigatie -->
+  <div class="flex gap-2 mb-8 overflow-x-auto pb-2">
+    <button onclick="showSection('home')" class="tab-btn active px-5 py-2 bg-teal-600 text-white rounded-2xl text-sm font-medium">Home</button>
+    <button onclick="showSection('story')" class="tab-btn px-5 py-2 bg-white border rounded-2xl text-sm font-medium">Mijn Verhaal</button>
+    <button onclick="showSection('exercises')" class="tab-btn px-5 py-2 bg-white border rounded-2xl text-sm font-medium">Oefeningen</button>
+    <button onclick="showSection('premium')" class="tab-btn px-5 py-2 bg-amber-500 text-white rounded-2xl text-sm font-medium">Premium</button>
+  </div>
+
+  <!-- HOME -->
+  <div id="home" class="section">
+    <div class="card p-8 rounded-3xl mb-8">
+      <p class="text-teal-700 font-medium">💡 Tip van vandaag</p>
+      <p class="mt-3 text-slate-700">Laat de angst er zijn zonder te vechten. Float erdoorheen.</p>
+    </div>
+  </div>
+
+  <!-- MEER SECTIES KOMEN IN VOLLEDIGE VERSIE -->
+  <!-- Ik heb de structuur klaar, maar om het overzichtelijk te houden: -->
+
+  <div id="exercises" class="section hidden">
+    <h2 class="text-2xl font-semibold mb-6">Oefeningen uit de gids</h2>
+    <div class="space-y-4">
+      <div class="card p-6 rounded-3xl cursor-pointer" onclick="alert('Floating gestart')">
+        <h3 class="font-semibold">🌊 Floating Techniek - Claire Weekes</h3>
+      </div>
+      <div class="card p-6 rounded-3xl cursor-pointer" onclick="alert('AWARE gestart')">
+        <h3 class="font-semibold">🧭 AWARE Methode</h3>
+      </div>
+      <div class="card p-6 rounded-3xl cursor-pointer">
+        <h3 class="font-semibold">4-7-8 Ademhaling</h3>
+      </div>
+      <div class="card p-6 rounded-3xl cursor-pointer">
+        <h3 class="font-semibold">5-4-3-2-1 Aarden</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- PREMIUM -->
+  <div id="premium" class="section hidden">
+    <div class="card p-8 rounded-3xl text-center">
+      <h2 class="text-2xl font-bold mb-4">Upgrade naar Premium</h2>
+      <p class="mb-6">Krijg audio-begeleiding met mijn stem, volledige tracker, werkboeken en meer.</p>
+      <button onclick="alert('Ga naar Lemon Squeezy voor betaling (binnenkort live)')"
+        class="w-full bg-teal-600 text-white py-5 rounded-3xl text-lg font-medium">
+        €39 eenmalig - Lifetime Toegang
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showSection(section) {
+  document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+  document.getElementById(section).classList.remove('hidden');
+}
+
+// Tab styling
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active', 'bg-teal-600', 'text-white'));
+    btn.classList.add('active', 'bg-teal-600', 'text-white');
+  });
+}
+</script>
 </body>
 </html>
+
+  
