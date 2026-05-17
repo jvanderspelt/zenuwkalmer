@@ -1,173 +1,622 @@
-<!DOCTYPE html>
-<html lang="nl">
+<!DOCTYPE html><html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZenuwKalmer • Paniek & Angst</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zenuwherstel — Claire Weekes Methode</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: system-ui, sans-serif; }
-    .header { background: linear-gradient(to right, #0ea5a6, #14b8a6); }
-    .card { background: white; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05); }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #f7f4ef 0%, #efe8dd 100%);
+  color: #3a352f;
+  min-height: 100vh;
+  line-height: 1.7;
+}
+
+header {
+  padding: 80px 24px 50px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #2d2924;
+}
+
+header p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #5c554c;
+}
+
+.hero-card {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 28px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.hero-card h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 16px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+  background: #c9b8a3;
+  color: white;
+  font-weight: 600;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: #b79f84;
+}
+
+.panic-btn {
+  background: #c58f8f;
+}
+
+.panic-btn:hover {
+  background: #b87878;
+}
+
+section {
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  padding: 0 24px;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #2d2924;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: rgba(255,255,255,0.72);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+  color: #2d2924;
+}
+
+.card p {
+  color: #5c554c;
+  margin-bottom: 12px;
+}
+
+.exercise-step {
+  margin-bottom: 12px;
+  padding-left: 10px;
+  border-left: 3px solid #d8c7b2;
+}
+
+.quote {
+  margin-top: 20px;
+  padding: 18px;
+  background: #f4eee5;
+  border-radius: 18px;
+  font-style: italic;
+  color: #5c554c;
+}
+
+.sos-box {
+  background: #f3dfdf;
+  padding: 32px;
+  border-radius: 28px;
+  text-align: center;
+}
+
+.sos-box h2 {
+  margin-bottom: 18px;
+  font-size: 2rem;
+}
+
+.sos-text {
+  font-size: 1.3rem;
+  color: #4d4640;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.phases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.phase {
+  background: rgba(255,255,255,0.7);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+.phase h4 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+footer {
+  padding: 60px 24px;
+  text-align: center;
+  color: #6b645b;
+}
+
+.breathing-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(201,184,163,0.4);
+  margin: 30px auto;
+  animation: breathe 8s infinite ease-in-out;
+}
+
+@keyframes breathe {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.journal {
+  width: 100%;
+  min-height: 160px;
+  border: none;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 16px;
+  font-size: 1rem;
+  resize: vertical;
+  background: rgba(255,255,255,0.8);
+  color: #3a352f;
+}
+
+.save-note {
+  margin-top: 16px;
+  color: #6b645b;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-card {
+    padding: 28px;
+  }
+}
+
   </style>
 </head>
-<body class="bg-slate-50 min-h-screen">
-
-<header class="header text-white py-6 shadow-md">
-  <div class="max-w-2xl mx-auto px-6 flex items-center gap-3">
-    <div class="w-12 h-12 bg-white rounded-3xl flex items-center justify-center text-4xl">🧠</div>
-    <div>
-      <span class="font-bold text-3xl">Paniek & Angst</span>
-      <p class="text-xs opacity-90">ZenuwKalmer - door Joris van der Spelt</p>
-    </div>
+<body><header>
+  <h1>Zenuwherstel</h1>
+  <p>
+    Een rustige digitale ruimte gebaseerd op de methode van Claire Weekes.
+    Niet vechten tegen angst. Niet fixen. Leren toelaten, drijven en herstellen.
+  </p>
+</header><div class="hero-card">
+  <h2>Welkom</h2>
+  <p>
+    Symptomen van angst voelen intens omdat het zenuwstelsel overgevoelig is geraakt.
+    Dat betekent niet dat je kapot bent. Het betekent dat je systeem bescherming probeert te bieden.
+  </p>  <div class="breathing-circle"></div>  <div class="button-row">
+    <button onclick="showSOS()">Ik voel angst</button>
+    <button class="panic-btn" onclick="showPanic()">Paniekmodus</button>
+    <button onclick="scrollToExercises()">Start oefeningen</button>
   </div>
-</header>
-
-<div class="max-w-2xl mx-auto px-6 pt-8">
-
-  <div class="flex gap-5 mb-10">
-    <img src="https://files.catbox.moe/0v4r2k.jpg" alt="Joris" class="w-28 h-28 rounded-3xl object-cover border-4 border-white shadow-xl">
-    <div>
-      <h1 class="text-3xl font-bold">Hallo, ik ben Joris</h1>
-      <p class="text-teal-600">Ik heb het zelf overwonnen</p>
-    </div>
+</div><section>
+  <div class="sos-box" id="sosBox">
+    <h2>SOS Herinnering</h2>
+    <p class="sos-text" id="sosText">
+      Dit gevoel is adrenaline. Niet gevaarlijk. Laat de golf bewegen zonder verzet.
+    </p>
   </div>
-
-  <div class="grid grid-cols-4 gap-2 bg-white p-1 rounded-3xl shadow mb-10">
-    <button onclick="showTab(0)" class="tab py-3 rounded-3xl font-medium">Home</button>
-    <button onclick="showTab(1)" class="tab py-3 rounded-3xl font-medium">Mijn Verhaal</button>
-    <button onclick="showTab(2)" class="tab py-3 rounded-3xl font-medium tab-active">Oefeningen</button>
-    <button onclick="showTab(3)" class="tab py-3 rounded-3xl font-medium bg-amber-500 text-white">Premium</button>
-  </div>
-
-  <!-- HOME -->
-  <div id="tab-0" class="tab-content">
-    <div class="card p-8 rounded-3xl">
-      <p class="text-teal-700 font-medium">💡 Tip van vandaag</p>
-      <p class="mt-3">"Laat de angst er zijn. Vecht er niet tegen. Float erdoorheen. Dit is de kern van herstel."</p>
-    </div>
-  </div>
-
-  <!-- MIJN VERHAAL (3x langer) -->
-  <div id="tab-1" class="tab-content hidden">
-    <div class="card p-8 rounded-3xl">
-      <h2 class="text-2xl font-bold mb-6">Mijn Persoonlijke Verhaal</h2>
-      <p class="text-slate-700 leading-relaxed">
-        Een paar jaar geleden zat ik volledig vast in de hel van paniekaanvallen en derealisatie.
-        Het begon met hartkloppingen, duizeligheid en een constant gevoel van onwerkelijkheid.
-        Al snel werd alles erger: ik durfde bijna niet meer de deur uit, vermeed supermarkten, openbaar vervoer en sociale situaties.
-        Mijn leven werd steeds kleiner.
+</section><section>
+  <h2 class="section-title">De 4 Fases van Claire Weekes</h2>  <div class="phases">
+    <div class="phase">
+      <h4>1. Begrijpen</h4>
+      <p>
+        Angst veroorzaakt lichamelijke sensaties. Het zijn stressreacties van het zenuwstelsel.
       </p>
-      <p class="text-slate-700 leading-relaxed mt-4">
-        Ik zat vast in de klassieke angstloop: gedachten triggerden lichamelijke sensaties, die weer nieuwe angstgedachten veroorzaakten.
-        Ik googelde symptomen tot diep in de nacht, zocht geruststelling en vocht constant tegen de gevoelens.
-        Ik geloofde echt niet meer dat herstel mogelijk was. Ik dacht dat ik "kapot" was.
-      </p>
-      <p class="text-slate-700 leading-relaxed mt-4">
-        Uiteindelijk vond ik de methode van Claire Weekes en principes zoals die van Sam Anxiety.
-        De doorbraak kwam toen ik stopte met vechten en leerde "floaten" door de sensaties heen.
-        Ik leerde accepteren dat dit mijn overprikkelde zenuwstelsel was — niet gevaarlijk, maar moe.
-      </p>
-      <p class="text-slate-700 leading-relaxed mt-4">
-        Langzaam maar zeker begon mijn herstelcurve omhoog te gaan. Het was geen rechte lijn, er waren terugvallen, maar elke keer dat ik AWARE toepaste en floating gebruikte, werd ik sterker.
-      </p>
-      <p class="text-slate-700 leading-relaxed mt-4 font-medium">
-        Nu wil ik jou helpen hetzelfde te doen. Zonder jarenlange therapie, zonder hoge kosten — gewoon praktische, werkende tools.
-      </p>
-    </div>
+    </div><div class="phase">
+  <h4>2. Accepteren</h4>
+  <p>
+    Niet vechten tegen gevoelens. Toestaan dat sensaties aanwezig zijn.
+  </p>
+</div>
+
+<div class="phase">
+  <h4>3. Floating</h4>
+  <p>
+    Meebewegen in plaats van controleren. Geen spanning toevoegen.
+  </p>
+</div>
+
+<div class="phase">
+  <h4>4. Tijd</h4>
+  <p>
+    Herstel gebeurt geleidelijk terwijl je leeft, beweegt en niet meer vlucht.
+  </p>
+</div>
+
   </div>
+</section><section id="exercises">
+  <h2 class="section-title">Claire Weekes Oefeningen</h2>  <div class="grid"><div class="card">
+  <h3>1. Laat de Golf Komen</h3>
+  <p>
+    Leer paniek toelaten zonder weerstand.
+  </p>
 
-  <!-- OEFENINGEN (uitgebreid geschreven) -->
-  <div id="tab-2" class="tab-content">
-    <h2 class="text-2xl font-bold mb-6">Uitgebreide Oefeningen</h2>
+  <div class="exercise-step">Stap 1 — Merk de sensatie op.</div>
+  <div class="exercise-step">Stap 2 — Benoem: “Dit is adrenaline.”</div>
+  <div class="exercise-step">Stap 3 — Stop met vechten.</div>
+  <div class="exercise-step">Stap 4 — Laat de golf stijgen en dalen.</div>
 
-    <div onclick="showExercise(1)" class="card p-6 rounded-3xl cursor-pointer mb-4">
-      <h3 class="font-semibold text-lg">🌊 Floating Techniek - Claire Weekes</h3>
-    </div>
-
-    <div onclick="showExercise(2)" class="card p-6 rounded-3xl cursor-pointer mb-4">
-      <h3 class="font-semibold text-lg">🧭 AWARE Methode</h3>
-    </div>
-
-    <div onclick="showExercise(3)" class="card p-6 rounded-3xl cursor-pointer mb-4">
-      <h3 class="font-semibold text-lg">🫁 4-7-8 Ademhaling</h3>
-    </div>
-
-    <div onclick="showExercise(4)" class="card p-6 rounded-3xl cursor-pointer">
-      <h3 class="font-semibold text-lg">🌍 5-4-3-2-1 Aarden</h3>
-    </div>
-  </div>
-
-  <!-- PREMIUM -->
-  <div id="tab-3" class="tab-content hidden">
-    <div class="card p-8 rounded-3xl">
-      <h2 class="text-3xl font-bold mb-4">Premium</h2>
-      <p class="mb-8">Krijg volledige toegang + exclusieve content:</p>
-      <ul class="space-y-3 mb-10">
-        <li>✅ Uitgebreide geschreven gidsen</li>
-        <li>✅ Persoonlijke herstel-tracker</li>
-        <li>✅ Extra modules en werkboeken</li>
-        <li>✅ Maandelijkse updates</li>
-      </ul>
-
-      <button onclick="goToPayment('lifetime')" class="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white py-6 rounded-3xl text-xl font-bold mb-4">
-        €39 eenmalig — Lifetime Toegang
-      </button>
-    </div>
+  <div class="quote">
+    “Paniek groeit door verzet.”
   </div>
 </div>
 
-<!-- Modal voor oefeningen -->
-<div id="modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
-  <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-auto">
-    <div class="p-6">
-      <button onclick="closeModal()" class="text-teal-600 mb-6 flex items-center gap-2">← Terug</button>
-      <div id="modal-content" class="prose text-slate-700 leading-relaxed"></div>
-    </div>
+<div class="card">
+  <h3>2. Floating Practice</h3>
+  <p>
+    Beweeg langzaam terwijl je lichaam gespannen is.
+  </p>
+
+  <div class="exercise-step">Ontspan je schouders.</div>
+  <div class="exercise-step">Loop langzaam.</div>
+  <div class="exercise-step">Laat gevoelens aanwezig zijn.</div>
+  <div class="exercise-step">Doe niets om het weg te maken.</div>
+
+  <div class="quote">
+    “Laat jezelf gedragen worden.”
   </div>
 </div>
 
-<script>
-function showTab(n) {
-  document.querySelectorAll('.tab-content').forEach(t => t.classList.add('hidden'));
-  document.getElementById('tab-' + n).classList.remove('hidden');
-}
+<div class="card">
+  <h3>3. Tweede Angst Stoppen</h3>
+  <p>
+    Eerste angst is automatisch. Tweede angst houdt het systeem actief.
+  </p>
 
-function showExercise(id) {
-  const modal = document.getElementById('modal');
-  const content = document.getElementById('modal-content');
+  <div class="exercise-step">Voel de sensatie.</div>
+  <div class="exercise-step">Stop catastrofale gedachten.</div>
+  <div class="exercise-step">Zeg: “Ik hoef dit niet op te lossen.”</div>
+  <div class="exercise-step">Laat tijd zijn werk doen.</div>
 
-  if (id === 1) {
-    content.innerHTML = `
-      <h2 class="text-2xl font-bold mb-6">🌊 Floating Techniek - Claire Weekes</h2>
-      <p>Floating betekent dat je spanning, angst of paniek toelaat zonder weerstand. Je laat de gevoelens er zijn, zonder ze te analyseren, te controleren of te onderdrukken.</p>
-      <p>Zoals een blaadje dat op het water drijft – het beweegt mee met de stroom, zonder paniek, zonder strijd.</p>
-      <p><strong>Zo pas je het toe:</strong></p>
-      <ul class="list-disc pl-5 space-y-2">
-        <li>Ervaar en laat toe: Voel de angst, maar zonder weerstand. Zeg: “Ik laat het toe.”</li>
-        <li>Ontspan bewust: Laat je spieren los, ontspan je ademhaling.</li>
-        <li>Drijf mee: Doe alsof je door een golf wordt gedragen.</li>
-        <li>Laat tijd haar werk doen: Angst zakt vanzelf als je stopt met vechten.</li>
-      </ul>
-    `;
-  } else if (id === 2) {
-    content.innerHTML = `<h2 class="text-2xl font-bold mb-6">🧭 AWARE Methode</h2><p>Accept • Watch • Act normaal • Repeat • Expect ups & downs</p>`;
-  } else {
-    content.innerHTML = `<h2 class="text-2xl font-bold mb-6">Oefening</h2><p>Uitgebreide geschreven handleiding volgt.</p>`;
+  <div class="quote">
+    “Tweede angst voedt de eerste.”
+  </div>
+</div>
+
+<div class="card">
+  <h3>4. Time Passing Room</h3>
+  <p>
+    Herstel gebeurt langzaam terwijl je leeft.
+  </p>
+
+  <div class="exercise-step">Ga rustig zitten.</div>
+  <div class="exercise-step">Observeer je omgeving.</div>
+  <div class="exercise-step">Stop analyseren.</div>
+  <div class="exercise-step">Laat minuten voorbijgaan.</div>
+
+  <div class="quote">
+    “Genezing gebeurt tijdens het leven.”
+  </div>
+</div>
+
+<div class="card">
+  <h3>5. Symptoomkaarten</h3>
+  <p>
+    Leer lichamelijke sensaties herinterpreteren.
+  </p>
+
+  <div class="exercise-step">Hartkloppingen = adrenaline.</div>
+  <div class="exercise-step">Duizeligheid = stressreactie.</div>
+  <div class="exercise-step">Tintelingen = spanning.</div>
+  <div class="exercise-step">Derealisatie = overbelasting.</div>
+
+  <div class="quote">
+    “Je lichaam probeert je te beschermen.”
+  </div>
+</div>
+
+<div class="card">
+  <h3>6. Do Nothing Challenge</h3>
+  <p>
+    Stop met controleren, fixen en geruststelling zoeken.
+  </p>
+
+  <div class="exercise-step">5 minuten niets oplossen.</div>
+  <div class="exercise-step">Geen body scanning.</div>
+  <div class="exercise-step">Geen googelen.</div>
+  <div class="exercise-step">Laat gevoelens bestaan.</div>
+
+  <div class="quote">
+    “Veiligheid ontstaat door niet reageren.”
+  </div>
+</div>
+
+<div class="card">
+  <h3>7. Veilig Voelen in Sensaties</h3>
+  <p>
+    Blijf aanwezig terwijl lichamelijke spanning aanwezig is.
+  </p>
+
+  <div class="exercise-step">Voel je voeten op de grond.</div>
+  <div class="exercise-step">Laat spanning bestaan.</div>
+  <div class="exercise-step">Zeg: “Ik ben veilig.”</div>
+  <div class="exercise-step">Adem langzaam uit.</div>
+
+  <div class="quote">
+    “Sensaties zijn niet hetzelfde als gevaar.”
+  </div>
+</div>
+
+<div class="card">
+  <h3>8. Exposure Zonder Dwang</h3>
+  <p>
+    Kleine stappen richting normale situaties.
+  </p>
+
+  <div class="exercise-step">Kies een lichte trigger.</div>
+  <div class="exercise-step">Blijf rustig aanwezig.</div>
+  <div class="exercise-step">Niet vluchten.</div>
+  <div class="exercise-step">Niet forceren.</div>
+
+  <div class="quote">
+    “Herstel ontstaat door ervaring.”
+  </div>
+</div>
+
+<div class="card">
+  <h3>9. Nachtelijke Angst Kalmeren</h3>
+  <p>
+    Voor angst of paniek in bed.
+  </p>
+
+  <div class="exercise-step">Voel het matras onder je.</div>
+  <div class="exercise-step">Ontspan je kaak.</div>
+  <div class="exercise-step">Laat gedachten komen en gaan.</div>
+  <div class="exercise-step">Je hoeft niet te slapen om te rusten.</div>
+
+  <div class="quote">
+    “Rust begint bij loslaten.”
+  </div>
+</div>
+
+  </div>
+</section><section>
+  <h2 class="section-title">Dagelijkse Check-In</h2>  <div class="card">
+    <p>Hoe voelt je zenuwstelsel vandaag?</p><input type="range" min="0" max="10" value="5" id="stressSlider" style="width:100%; margin-top:20px;">
+
+<p style="margin-top:20px;">
+  Stressniveau: <span id="stressValue">5</span>/10
+</p>
+
+<textarea class="journal" placeholder="Schrijf op wat je vandaag voelt..."></textarea>
+
+<p class="save-note">
+  Je hoeft niets op te lossen. Alleen observeren.
+</p>
+
+  </div>
+</section><section>
+  <h2 class="section-title">Dagelijkse Herinneringen</h2>  <div class="grid">
+    <div class="card">
+      <h3>Herinnering 1</h3>
+      <p>
+        Je zenuwstelsel leert veiligheid door herhaling.
+      </p>
+    </div><div class="card">
+  <h3>Herinnering 2</h3>
+  <p>
+    Angstige sensaties zijn tijdelijk.
+  </p>
+</div>
+
+<div class="card">
+  <h3>Herinnering 3</h3>
+  <p>
+    Je hoeft je niet perfect te voelen om door te leven.
+  </p>
+</div>
+
+<div class="card">
+  <h3>Herinnering 4</h3>
+  <p>
+    Vermijding houdt angst actief.
+  </p>
+</div>
+
+  </div>
+</section><footer>
+  <p>
+    Gebaseerd op de principes van Claire Weekes — acceptatie, floating en tijd.
+  </p>
+<section>
+  <h2 class="section-title">AI Coach</h2>  <div class="card">
+    <p>
+      Typ hoe je je voelt. De coach reageert in een rustige Claire Weekes-stijl.
+    </p><textarea id="coachInput" class="journal" placeholder="Bijvoorbeeld: ik voel veel spanning in mijn borst..."></textarea>
+
+<button style="margin-top:20px;" onclick="generateCoachResponse()">Praat met coach</button>
+
+<div id="coachResponse" class="quote" style="margin-top:24px; display:none;"></div>
+
+  </div>
+</section><section>
+  <h2 class="section-title">30 Dagen Herstelpad</h2>  <div class="grid">
+    <div class="card">
+      <h3>Week 1 — Begrijpen</h3>
+      <p>
+        Leer hoe adrenaline, angst en het zenuwstelsel werken.
+      </p>
+    </div><div class="card">
+  <h3>Week 2 — Toelaten</h3>
+  <p>
+    Oefen met gevoelens laten bestaan zonder weerstand.
+  </p>
+</div>
+
+<div class="card">
+  <h3>Week 3 — Floating</h3>
+  <p>
+    Ontwikkel rust tijdens spanning en dagelijkse activiteiten.
+  </p>
+</div>
+
+<div class="card">
+  <h3>Week 4 — Vertrouwen</h3>
+  <p>
+    Bouw vertrouwen op in je lichaam en herstelproces.
+  </p>
+</div>
+
+  </div>
+</section><section>
+  <h2 class="section-title">Rustgevende Geluiden</h2>  <div class="grid">
+    <div class="card">
+      <h3>Regen</h3>
+      <button onclick="playSound('rain')">Afspelen</button>
+    </div><div class="card">
+  <h3>Golven</h3>
+  <button onclick="playSound('waves')">Afspelen</button>
+</div>
+
+<div class="card">
+  <h3>Bosgeluiden</h3>
+  <button onclick="playSound('forest')">Afspelen</button>
+</div>
+
+  </div>
+</section><section>
+  <h2 class="section-title">Dagelijkse Affirmaties</h2>  <div class="card" style="text-align:center;">
+    <h3 id="affirmationText">
+      Ik hoef mijn gevoelens niet te controleren om veilig te zijn.
+    </h3><button style="margin-top:24px;" onclick="newAffirmation()">
+  Nieuwe affirmatie
+</button>
+
+  </div>
+</section><footer><script>
+  const sosMessages = [
+    'Dit is adrenaline. Niet gevaarlijk.',
+    'Laat de sensatie bestaan zonder verzet.',
+    'Je hoeft dit moment niet te controleren.',
+    'Het zenuwstelsel kalmeert door acceptatie.',
+    'Laat de golf komen en weer vertrekken.',
+    'Paniek voelt intens maar is tijdelijk.'
+  ];
+
+  function showSOS() {
+    const random = sosMessages[Math.floor(Math.random() * sosMessages.length)];
+    document.getElementById('sosText').innerText = random;
   }
-  modal.classList.remove('hidden');
-}
 
-function closeModal() {
-  document.getElementById('modal').classList.add('hidden');
-}
+  function showPanic() {
+    alert(
+      'Stop even. Ontspan je schouders.\n\nDit is een stressreactie van het zenuwstelsel. Niet gevaarlijk.\n\nLaat de sensaties bestaan zonder vechten.'
+    );
+  }
 
-function goToPayment(type) {
-  alert("Wordt doorgestuurd naar Lemon Squeezy...");
-}
+  function scrollToExercises() {
+    document.getElementById('exercises').scrollIntoView({ behavior: 'smooth' });
+  }
 
-showTab(2); // Start op Oefeningen
-</script>
-</body>
+  const slider = document.getElementById('stressSlider');
+  const stressValue = document.getElementById('stressValue');
+
+  slider.addEventListener('input', () => {
+    stressValue.innerText = slider.value;
+  });
+
+  const affirmations = [
+    'Ik hoef mijn gevoelens niet te controleren om veilig te zijn.',
+    'Herstel gebeurt stap voor stap.',
+    'Mijn zenuwstelsel leert langzaam rust.',
+    'Ik mag spanning voelen zonder te vluchten.',
+    'Angst is een gevoel, geen gevaar.',
+    'Ik hoef niets op te lossen in dit moment.'
+  ];
+
+  function newAffirmation() {
+    const random = affirmations[Math.floor(Math.random() * affirmations.length)];
+    document.getElementById('affirmationText').innerText = random;
+  }
+
+  function generateCoachResponse() {
+    const input = document.getElementById('coachInput').value.toLowerCase();
+    const response = document.getElementById('coachResponse');
+
+    let text = 'Laat gevoelens aanwezig zijn zonder verzet. Je zenuwstelsel probeert je te beschermen.';
+
+    if(input.includes('hart')) {
+      text = 'Hartkloppingen zijn een normale adrenaline-reactie. Niet gevaarlijk. Laat het systeem kalmeren zonder controleren.';
+    }
+
+    if(input.includes('duizelig')) {
+      text = 'Duizeligheid ontstaat vaak door spanning en alertheid. Probeer niet te analyseren. Laat het gevoel bestaan.';
+    }
+
+    if(input.includes('paniek')) {
+      text = 'Paniek voelt intens, maar het is een tijdelijke golf van adrenaline. Vechten houdt de golf actief.';
+    }
+
+    if(input.includes('slaap')) {
+      text = 'Je hoeft niet perfect te slapen om te herstellen. Rust begint bij minder strijd.';
+    }
+
+    response.style.display = 'block';
+    response.innerText = text;
+  }
+
+  function playSound(type) {
+    alert('Hier kun je later echte audio koppelen voor: ' + type);
+  }
+</script></body>
 </html>
+       
+
