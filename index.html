@@ -75,7 +75,7 @@
   </div>
 </div>
 
-  </div>  <div class="grid grid-cols-3 md:grid-cols-7 gap-2 bg-white p-2 rounded-[28px] shadow-xl mb-10 sticky top-24 z-30">
+  </div>  <div class="grid grid-cols-4 md:grid-cols-8 gap-2 bg-white p-2 rounded-[28px] shadow-xl mb-10 sticky top-24 z-30">
     <button onclick="showTab(0)" class="tab py-3 rounded-2xl font-medium">Home</button>
     <button onclick="showTab(1)" class="tab py-3 rounded-2xl font-medium">Verhaal</button>
     <button onclick="showTab(2)" class="tab py-3 rounded-2xl font-medium">Oefeningen</button>
@@ -83,6 +83,7 @@
     <button onclick="showTab(4)" class="tab py-3 rounded-2xl font-medium">Herstel</button>
     <button onclick="showTab(5)" class="tab py-3 rounded-2xl font-medium">Coach</button>
     <button onclick="showTab(6)" class="tab py-3 rounded-2xl font-medium bg-amber-500 text-white">Premium</button>
+    <button onclick="showTab(7)" class="tab py-3 rounded-2xl font-medium">Tools</button>
   </div>  <div id="tab-0" class="tab-content fade">
     <div class="glass rounded-[32px] p-8 text-center">
       <h2 class="text-4xl font-bold mb-4">Je zenuwstelsel kan herstellen</h2><p class="text-slate-600 max-w-2xl mx-auto leading-relaxed text-lg">
@@ -219,33 +220,136 @@
 </div>
 
   </div>  <div id="tab-6" class="tab-content hidden fade">
-    <div class="glass rounded-[32px] p-8 text-center">
-      <h2 class="text-4xl font-bold mb-4">Premium Herstel</h2><p class="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed">
-    Diepe audio oefeningen, panic recovery begeleiding,
-    slaapmodules, dagelijkse coaching en volledige herstelprogramma’s.
+    <div class="glass rounded-[32px] p-8 text-center overflow-hidden relative"><div class="absolute top-0 right-0 bg-amber-400 text-white px-4 py-2 rounded-bl-3xl font-bold shadow-lg">
+    PREMIUM
+  </div>
+
+  <h2 class="text-4xl font-bold mb-4">Premium Herstel</h2>
+
+  <p class="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed">
+    Volledige begeleiding voor herstel van paniek, angst en een overbelast zenuwstelsel.
   </p>
 
-  <div class="grid md:grid-cols-2 gap-4 mt-8 text-left">
+  <div class="mt-8 text-5xl font-bold text-amber-500">
+    €39
+  </div>
+
+  <p class="text-slate-500 mt-2">per jaar</p>
+
+  <button class="mt-6 bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-full shadow-2xl text-lg font-semibold transition-all hover:scale-105">
+    Start Premium
+  </button>
+
+  <div class="grid md:grid-cols-2 gap-4 mt-10 text-left">
 
     <div class="bg-white rounded-[24px] p-5 shadow-sm">
-      🔒 Floating Audio’s
+      🎧 Diepe Floating Audio’s
     </div>
 
     <div class="bg-white rounded-[24px] p-5 shadow-sm">
-      🔒 Nachtelijke Paniek Hulp
+      🌙 Nachtelijke Paniek Hulp
     </div>
 
     <div class="bg-white rounded-[24px] p-5 shadow-sm">
-      🔒 Dagelijkse Recovery Coaching
+      📈 Herstel Progressie Tracker
     </div>
 
     <div class="bg-white rounded-[24px] p-5 shadow-sm">
-      🔒 Nervous System Reset Programma
+      🧠 Dagelijkse Coach Berichten
+    </div>
+
+    <div class="bg-white rounded-[24px] p-5 shadow-sm">
+      🚶 Exposure Begeleiding
+    </div>
+
+    <div class="bg-white rounded-[24px] p-5 shadow-sm">
+      🔒 50+ Premium Oefeningen
     </div>
 
   </div>
 </div>
 
+  </div>  <div id="tab-7" class="tab-content hidden fade">
+    <div class="glass rounded-[32px] p-8"><h2 class="text-3xl font-bold mb-6">Interactieve Hersteltools</h2>
+
+  <div class="space-y-6">
+
+    <div class="bg-white rounded-[28px] p-6 shadow-sm">
+      <h3 class="text-2xl font-bold mb-4">📈 Mijn Herstelcurve</h3>
+
+      <div class="w-full bg-slate-100 rounded-full h-5 overflow-hidden">
+        <div id="recoveryBar" class="bg-teal-500 h-full rounded-full transition-all duration-700" style="width: 20%"></div>
+      </div>
+
+      <p class="mt-4 text-slate-600 leading-relaxed">
+        Herstel is geen rechte lijn.
+        Ups en downs horen erbij.
+      </p>
+
+      <button onclick="increaseRecovery()"
+        class="mt-5 bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-full">
+        Ik heb vandaag geoefend
+      </button>
+    </div>
+
+    <div class="bg-white rounded-[28px] p-6 shadow-sm">
+      <h3 class="text-2xl font-bold mb-4">🌊 Angstloop Visualisatie</h3>
+
+      <div class="grid md:grid-cols-4 gap-3 text-center">
+        <div class="bg-rose-50 p-4 rounded-2xl">Gedachte</div>
+        <div class="bg-amber-50 p-4 rounded-2xl">Angst</div>
+        <div class="bg-sky-50 p-4 rounded-2xl">Sensatie</div>
+        <div class="bg-violet-50 p-4 rounded-2xl">Meer Angst</div>
+      </div>
+
+      <p class="mt-5 text-slate-600">
+        Door acceptatie en AWARE doorbreek je deze cyclus.
+      </p>
+    </div>
+
+    <div class="bg-white rounded-[28px] p-6 shadow-sm">
+      <h3 class="text-2xl font-bold mb-4">🧭 Exposure Tracker</h3>
+
+      <label class="block mb-2 text-slate-600">Welke situatie oefende je?</label>
+
+      <select class="w-full p-4 rounded-2xl border border-slate-200">
+        <option>Supermarkt</option>
+        <option>Openbaar vervoer</option>
+        <option>Restaurant</option>
+        <option>Sociaal contact</option>
+        <option>Alleen thuis</option>
+      </select>
+
+      <label class="block mt-5 mb-2 text-slate-600">Hoeveel spanning voelde je?</label>
+
+      <input type="range" min="1" max="10" value="5" class="w-full">
+
+      <button class="mt-5 bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-full">
+        Opslaan
+      </button>
+    </div>
+
+    <div class="bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-[32px] p-8 shadow-2xl">
+      <h3 class="text-3xl font-bold mb-4">Persoonlijk Bericht van Joris</h3>
+
+      <p class="text-lg leading-relaxed opacity-95">
+        “Ik dacht echt dat ik nooit meer normaal zou worden.
+        Mijn zenuwstelsel stond constant aan.
+        Maar herstel is mogelijk.
+        Niet door harder te vechten,
+        maar door het systeem veiligheid te leren.”
+      </p>
+
+      <p class="mt-6 text-white/90 font-medium">
+        Gebaseerd op paniekenangst.nl en jouw herstelgids.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+  </div></div>
+</div>
   </div></div><div id="exercise-modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
   <div class="bg-white max-w-2xl w-full rounded-[32px] max-h-[90vh] overflow-auto shadow-2xl">
     <div class="p-8">
@@ -405,6 +509,16 @@
 
     response.classList.remove('hidden');
     response.innerText = text;
+  }
+
+  function increaseRecovery() {
+    const bar = document.getElementById('recoveryBar');
+    let current = parseInt(bar.style.width);
+
+    if(current < 100) {
+      current += 10;
+      bar.style.width = current + '%';
+    }
   }
 
   showTab(0);
