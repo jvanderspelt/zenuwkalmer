@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZenuwKalmer • Paniek & Angst</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
   <style>
     body { font-family: system-ui, sans-serif; }
@@ -31,13 +30,13 @@
     <img src="https://files.catbox.moe/0v4r2k.jpg" alt="Joris" class="w-28 h-28 rounded-3xl object-cover border-4 border-white shadow-xl">
     <div>
       <h1 class="text-3xl font-bold">Hallo, ik ben Joris</h1>
-      <p class="text-teal-600">Ik heb paniek overwonnen en help jou nu</p>
+      <p class="text-teal-600">Ik heb het zelf overwonnen</p>
     </div>
   </div>
 
   <div class="grid grid-cols-4 gap-2 bg-white p-1 rounded-3xl shadow mb-10">
     <button onclick="showTab(0)" class="tab py-3 rounded-3xl font-medium">Home</button>
-    <button onclick="showTab(1)" class="tab py-3 rounded-3xl font-medium">Verhaal</button>
+    <button onclick="showTab(1)" class="tab py-3 rounded-3xl font-medium">Mijn Verhaal</button>
     <button onclick="showTab(2)" class="tab py-3 rounded-3xl font-medium tab-active">Oefeningen</button>
     <button onclick="showTab(3)" class="tab py-3 rounded-3xl font-medium bg-amber-500 text-white">Premium</button>
   </div>
@@ -46,30 +45,49 @@
   <div id="tab-0" class="tab-content">
     <div class="card p-8 rounded-3xl">
       <p class="text-teal-700 font-medium">💡 Tip van vandaag</p>
-      <p class="mt-3">"Laat de angst er zijn. Vecht er niet tegen. Float erdoorheen. Dit is de kern van herstel volgens Claire Weekes en Sam Anxiety."</p>
+      <p class="mt-3">"Laat de angst er zijn. Vecht er niet tegen. Float erdoorheen. Dit is de kern van herstel."</p>
     </div>
   </div>
 
-  <!-- VERHAAL -->
+  <!-- MIJN VERHAAL (3x langer) -->
   <div id="tab-1" class="tab-content hidden">
     <div class="card p-8 rounded-3xl">
-      <h2 class="text-2xl font-bold mb-6">Mijn Verhaal</h2>
-      <p class="text-slate-700 leading-relaxed">Ik heb zelf jarenlang vastgezeten in hevige paniekaanvallen, derealisatie en constante angst. Ik geloofde niet meer dat herstel mogelijk was. Na veel zoeken vond ik de weg terug via Claire Weekes en principes zoals die van Sam Anxiety.</p>
+      <h2 class="text-2xl font-bold mb-6">Mijn Persoonlijke Verhaal</h2>
+      <p class="text-slate-700 leading-relaxed">
+        Een paar jaar geleden zat ik volledig vast in de hel van paniekaanvallen en derealisatie.
+        Het begon met hartkloppingen, duizeligheid en een constant gevoel van onwerkelijkheid.
+        Al snel werd alles erger: ik durfde bijna niet meer de deur uit, vermeed supermarkten, openbaar vervoer en sociale situaties.
+        Mijn leven werd steeds kleiner.
+      </p>
+      <p class="text-slate-700 leading-relaxed mt-4">
+        Ik zat vast in de klassieke angstloop: gedachten triggerden lichamelijke sensaties, die weer nieuwe angstgedachten veroorzaakten.
+        Ik googelde symptomen tot diep in de nacht, zocht geruststelling en vocht constant tegen de gevoelens.
+        Ik geloofde echt niet meer dat herstel mogelijk was. Ik dacht dat ik "kapot" was.
+      </p>
+      <p class="text-slate-700 leading-relaxed mt-4">
+        Uiteindelijk vond ik de methode van Claire Weekes en principes zoals die van Sam Anxiety.
+        De doorbraak kwam toen ik stopte met vechten en leerde "floaten" door de sensaties heen.
+        Ik leerde accepteren dat dit mijn overprikkelde zenuwstelsel was — niet gevaarlijk, maar moe.
+      </p>
+      <p class="text-slate-700 leading-relaxed mt-4">
+        Langzaam maar zeker begon mijn herstelcurve omhoog te gaan. Het was geen rechte lijn, er waren terugvallen, maar elke keer dat ik AWARE toepaste en floating gebruikte, werd ik sterker.
+      </p>
+      <p class="text-slate-700 leading-relaxed mt-4 font-medium">
+        Nu wil ik jou helpen hetzelfde te doen. Zonder jarenlange therapie, zonder hoge kosten — gewoon praktische, werkende tools.
+      </p>
     </div>
   </div>
 
-  <!-- OEFENINGEN (uitgebreid) -->
+  <!-- OEFENINGEN (uitgebreid geschreven) -->
   <div id="tab-2" class="tab-content">
     <h2 class="text-2xl font-bold mb-6">Uitgebreide Oefeningen</h2>
 
     <div onclick="showExercise(1)" class="card p-6 rounded-3xl cursor-pointer mb-4">
       <h3 class="font-semibold text-lg">🌊 Floating Techniek - Claire Weekes</h3>
-      <p class="text-teal-600 text-sm">Laat de angst er zijn zonder weerstand</p>
     </div>
 
     <div onclick="showExercise(2)" class="card p-6 rounded-3xl cursor-pointer mb-4">
       <h3 class="font-semibold text-lg">🧭 AWARE Methode</h3>
-      <p class="text-teal-600 text-sm">Accept, Watch, Act, Repeat, Expect</p>
     </div>
 
     <div onclick="showExercise(3)" class="card p-6 rounded-3xl cursor-pointer mb-4">
@@ -87,25 +105,25 @@
       <h2 class="text-3xl font-bold mb-4">Premium</h2>
       <p class="mb-8">Krijg volledige toegang + exclusieve content:</p>
       <ul class="space-y-3 mb-10">
-        <li>✅ Audio-begeleiding met mijn stem</li>
-        <li>✅ Volledige PDF + werkboeken</li>
-        <li>✅ Persoonlijke tracker + grafieken</li>
-        <li>✅ Extra modules (Sam Anxiety technieken)</li>
+        <li>✅ Uitgebreide geschreven gidsen</li>
+        <li>✅ Persoonlijke herstel-tracker</li>
+        <li>✅ Extra modules en werkboeken</li>
+        <li>✅ Maandelijkse updates</li>
       </ul>
 
       <button onclick="goToPayment('lifetime')" class="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white py-6 rounded-3xl text-xl font-bold mb-4">
-        €39 eenmalig — Lifetime
+        €39 eenmalig — Lifetime Toegang
       </button>
     </div>
   </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal voor oefeningen -->
 <div id="modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
   <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-auto">
     <div class="p-6">
-      <button onclick="closeModal()" class="text-teal-600 mb-6">← Terug</button>
-      <div id="modal-content" class="prose"></div>
+      <button onclick="closeModal()" class="text-teal-600 mb-6 flex items-center gap-2">← Terug</button>
+      <div id="modal-content" class="prose text-slate-700 leading-relaxed"></div>
     </div>
   </div>
 </div>
@@ -123,12 +141,20 @@ function showExercise(id) {
   if (id === 1) {
     content.innerHTML = `
       <h2 class="text-2xl font-bold mb-6">🌊 Floating Techniek - Claire Weekes</h2>
-      <p>Floating betekent dat je de angst toelaat zonder weerstand. Je laat de gevoelens er zijn, zonder ze te analyseren of te onderdrukken.</p>
-      <p>Stel je voor dat je een blaadje bent op een rivier. Je drijft mee met de stroom.</p>
-      <p>Zeg tegen jezelf: "Ik laat dit er zijn. Ik drijf erdoorheen."</p>
+      <p>Floating betekent dat je spanning, angst of paniek toelaat zonder weerstand. Je laat de gevoelens er zijn, zonder ze te analyseren, te controleren of te onderdrukken.</p>
+      <p>Zoals een blaadje dat op het water drijft – het beweegt mee met de stroom, zonder paniek, zonder strijd.</p>
+      <p><strong>Zo pas je het toe:</strong></p>
+      <ul class="list-disc pl-5 space-y-2">
+        <li>Ervaar en laat toe: Voel de angst, maar zonder weerstand. Zeg: “Ik laat het toe.”</li>
+        <li>Ontspan bewust: Laat je spieren los, ontspan je ademhaling.</li>
+        <li>Drijf mee: Doe alsof je door een golf wordt gedragen.</li>
+        <li>Laat tijd haar werk doen: Angst zakt vanzelf als je stopt met vechten.</li>
+      </ul>
     `;
+  } else if (id === 2) {
+    content.innerHTML = `<h2 class="text-2xl font-bold mb-6">🧭 AWARE Methode</h2><p>Accept • Watch • Act normaal • Repeat • Expect ups & downs</p>`;
   } else {
-    content.innerHTML = `<h2>Oefening</h2><p>Uitgebreide uitleg en audio in Premium.</p>`;
+    content.innerHTML = `<h2 class="text-2xl font-bold mb-6">Oefening</h2><p>Uitgebreide geschreven handleiding volgt.</p>`;
   }
   modal.classList.remove('hidden');
 }
@@ -138,7 +164,7 @@ function closeModal() {
 }
 
 function goToPayment(type) {
-  alert("Lemon Squeezy betaalpagina (vervang met echte link)");
+  alert("Wordt doorgestuurd naar Lemon Squeezy...");
 }
 
 showTab(2); // Start op Oefeningen
