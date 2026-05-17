@@ -2,364 +2,732 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZenuwKalmer • Paniek & Angst</title>  <script src="https://cdn.tailwindcss.com"></script>  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      background: linear-gradient(to bottom, #f8fafc, #eefdfb);
+  <title>ZenuwKalmer — Herstel van Paniek & Angst</title>  <script src="https://cdn.tailwindcss.com"></script>  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">  <style>
+    * {
+      font-family: 'Inter', sans-serif;
     }
 
-    .header {
-      background: linear-gradient(to right, #0f766e, #14b8a6);
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(20,184,166,0.12), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(56,189,248,0.12), transparent 30%),
+        #f8fafc;
+      color: #0f172a;
     }
 
     .glass {
       background: rgba(255,255,255,0.72);
-      backdrop-filter: blur(18px);
-      border: 1px solid rgba(255,255,255,0.4);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.5);
+      box-shadow: 0 10px 40px rgba(15,23,42,0.08);
     }
 
     .tab-active {
-      background: #14b8a6;
+      background: linear-gradient(to right, #14b8a6, #06b6d4);
       color: white;
+      box-shadow: 0 10px 30px rgba(20,184,166,0.25);
     }
 
-    .breathing {
-      width: 150px;
-      height: 150px;
+    .breathing-circle {
+      width: 180px;
+      height: 180px;
       border-radius: 9999px;
-      background: rgba(20,184,166,0.2);
+      margin: 0 auto;
+      background: linear-gradient(to bottom right, rgba(20,184,166,0.25), rgba(34,211,238,0.2));
       animation: breathe 8s infinite ease-in-out;
-      margin: 20px auto;
+      box-shadow: 0 0 50px rgba(20,184,166,0.2);
     }
 
     @keyframes breathe {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.18); }
-      100% { transform: scale(1); }
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.18);
+      }
+      100% {
+        transform: scale(1);
+      }
     }
 
     .fade {
-      animation: fade 0.3s ease;
+      animation: fade 0.4s ease;
     }
 
     @keyframes fade {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-  </style></head><body class="min-h-screen text-slate-800"><header class="header text-white py-6 shadow-xl sticky top-0 z-40">
-  <div class="max-w-3xl mx-auto px-6 flex items-center gap-4">
-    <div class="w-14 h-14 rounded-3xl bg-white flex items-center justify-center text-4xl shadow-xl">
-      🧠
-    </div><div>
-  <h1 class="text-3xl font-bold">Paniek & Angst</h1>
-  <p class="opacity-90 text-sm">ZenuwKalmer — door Joris</p>
-</div>
 
+    .gradient-text {
+      background: linear-gradient(to right, #14b8a6, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .progress-ring {
+      transition: 0.5s ease;
+    }
+
+    .hidden-scroll::-webkit-scrollbar {
+      display: none;
+    }
+  </style></head><body class="min-h-screen"><header class="sticky top-0 z-50 px-4 pt-4">
+  <div class="glass max-w-6xl mx-auto rounded-[32px] px-6 py-5 flex flex-wrap items-center justify-between"><div class="flex items-center gap-4">
+  <div class="w-14 h-14 rounded-[24px] bg-gradient-to-br from-teal-400 to-cyan-400 text-white flex items-center justify-center text-3xl shadow-xl">
+    🧠
   </div>
-</header><button onclick="openSOS()" class="fixed bottom-6 right-6 bg-red-400 hover:bg-red-500 text-white px-6 py-4 rounded-full shadow-2xl z-50 transition-all">
-  🚨 Ik heb paniek
-</button><div class="max-w-3xl mx-auto px-6 py-8">  <div class="glass rounded-[32px] p-6 mb-10 fade">
-    <div class="flex gap-5 items-center flex-wrap">
-      <img src="https://files.catbox.moe/0v4r2k.jpg"
-        class="w-28 h-28 rounded-[28px] object-cover border-4 border-white shadow-xl"><div>
-    <h2 class="text-3xl font-bold">Hallo, ik ben Joris</h2>
-    <p class="text-teal-700 text-lg">Ik heb paniek en angst zelf overwonnen.</p>
 
-    <p class="mt-4 text-slate-600 leading-relaxed max-w-xl">
-      Jarenlang stond mijn zenuwstelsel constant aan.
-      Ik dacht dat ik nooit meer normaal zou worden.
-      Tot ik de methode van Claire Weekes ontdekte.
-      Deze app is gemaakt om jou dezelfde rust en vrijheid terug te geven.
-    </p>
+  <div>
+    <h1 class="text-2xl font-extrabold">ZenuwKalmer</h1>
+    <p class="text-slate-500 text-sm">Herstel van paniek, angst & een overbelast zenuwstelsel</p>
   </div>
 </div>
 
-  </div>  <div class="grid grid-cols-4 md:grid-cols-8 gap-2 bg-white p-2 rounded-[28px] shadow-xl mb-10 sticky top-24 z-30">
-    <button onclick="showTab(0)" class="tab py-3 rounded-2xl font-medium">Home</button>
-    <button onclick="showTab(1)" class="tab py-3 rounded-2xl font-medium">Verhaal</button>
-    <button onclick="showTab(2)" class="tab py-3 rounded-2xl font-medium">Oefeningen</button>
-    <button onclick="showTab(3)" class="tab py-3 rounded-2xl font-medium">SOS</button>
-    <button onclick="showTab(4)" class="tab py-3 rounded-2xl font-medium">Herstel</button>
-    <button onclick="showTab(5)" class="tab py-3 rounded-2xl font-medium">Coach</button>
-    <button onclick="showTab(6)" class="tab py-3 rounded-2xl font-medium bg-amber-500 text-white">Premium</button>
-    <button onclick="showTab(7)" class="tab py-3 rounded-2xl font-medium">Tools</button>
-  </div>  <div id="tab-0" class="tab-content fade">
-    <div class="glass rounded-[32px] p-8 text-center">
-      <h2 class="text-4xl font-bold mb-4">Je zenuwstelsel kan herstellen</h2><p class="text-slate-600 max-w-2xl mx-auto leading-relaxed text-lg">
-    Angst voelt intens omdat je zenuwstelsel overgevoelig is geworden.
-    Dat betekent niet dat je kapot bent.
-    Je systeem probeert je te beschermen.
-  </p>
+<div class="flex items-center gap-3 mt-4 md:mt-0">
+  <button onclick="openSOS()"
+    class="bg-rose-500 hover:bg-rose-600 transition-all text-white px-5 py-3 rounded-full font-semibold shadow-xl">
+    🚨 SOS
+  </button>
 
-  <div class="breathing"></div>
-
-  <p class="text-teal-700 font-medium mt-4 text-lg">
-    Laat gevoelens bestaan zonder verzet.
-  </p>
+  <button class="bg-gradient-to-r from-amber-400 to-orange-400 text-white px-5 py-3 rounded-full font-semibold shadow-xl">
+    Premium €39/jaar
+  </button>
 </div>
 
-  </div>  <div id="tab-1" class="tab-content hidden fade">
-    <div class="glass rounded-[32px] p-8">
-      <h2 class="text-3xl font-bold mb-6">Mijn verhaal</h2><div class="space-y-5 text-slate-700 leading-relaxed text-lg">
-    <p>
-      Ik leefde jarenlang in constante angst.
-      Hartkloppingen, duizeligheid, paniekaanvallen en derealisatie beheersten mijn leven.
+  </div>
+</header><main class="max-w-6xl mx-auto px-4 py-8">  <section class="glass rounded-[40px] p-8 md:p-12 overflow-hidden relative mb-8"><div class="absolute top-0 right-0 w-96 h-96 bg-teal-100 rounded-full blur-3xl opacity-40"></div>
+
+<div class="relative z-10 grid md:grid-cols-2 gap-10 items-center">
+
+  <div>
+    <div class="inline-flex items-center gap-2 bg-teal-50 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold mb-5">
+      ✨ Gebaseerd op Claire Weekes & echte herstelervaring
+    </div>
+
+    <h2 class="text-5xl font-extrabold leading-tight">
+      Je bent niet gebroken.
+      <span class="gradient-text">Je zenuwstelsel is overbelast.</span>
+    </h2>
+
+    <p class="text-slate-600 text-lg leading-relaxed mt-6 max-w-2xl">
+      Ik ben Joris.
+      Jarenlang leefde ik met paniekaanvallen, derealisatie,
+      hartkloppingen en constante angst.
+      Deze app is gemaakt om jou te helpen herstellen met acceptatie,
+      floating en een veilig zenuwstelsel.
     </p>
 
-    <p>
-      Ik probeerde alles onder controle te houden.
-      Maar juist dat hield mijn zenuwstelsel gevangen.
+    <div class="flex flex-wrap gap-4 mt-8">
+      <button onclick="showTab(1)"
+        class="bg-gradient-to-r from-teal-500 to-cyan-500 hover:scale-105 transition-all text-white px-7 py-4 rounded-full font-semibold shadow-2xl">
+        Start Herstel
+      </button>
+
+      <button onclick="showTab(4)"
+        class="glass px-7 py-4 rounded-full font-semibold">
+        Bekijk Progressie
+      </button>
+    </div>
+  </div>
+
+  <div class="glass rounded-[40px] p-8 text-center">
+    <div class="breathing-circle"></div>
+
+    <p class="mt-8 text-2xl font-bold text-slate-800">
+      Laat gevoelens bestaan
     </p>
 
-    <p>
-      Toen ontdekte ik Claire Weekes.
-      Voor het eerst begreep ik dat angst niet gevaarlijk was — alleen adrenaline.
+    <p class="mt-4 text-slate-600 leading-relaxed text-lg">
+      Niet oplossen.
+      Niet controleren.
+      Alleen toelaten.
     </p>
 
-    <p>
-      Langzaam leerde ik floating, acceptatie en herstel door tijd.
-      Niet perfect. Niet in één dag. Maar stap voor stap.
-    </p>
-
-    <div class="bg-teal-50 p-6 rounded-[28px] mt-6 border border-teal-100">
-      <p class="font-medium text-teal-800">
-        Herstel is mogelijk. Ook als je zenuwstelsel al lang overbelast voelt.
+    <div class="mt-8 bg-teal-50 border border-teal-100 rounded-[28px] p-5">
+      <p class="text-teal-800 font-medium">
+        “Herstel gebeurt door acceptatie + tijd.”
       </p>
     </div>
   </div>
 </div>
 
-  </div>  <div id="tab-2" class="tab-content hidden fade">
-    <h2 class="text-3xl font-bold mb-6">Oefeningen</h2><div class="space-y-4">
+  </section>  <section class="glass rounded-[32px] p-3 sticky top-28 z-40 mb-10 overflow-x-auto hidden-scroll">
+    <div class="flex gap-2 min-w-max">
+      <button onclick="showTab(0)" class="tab tab-active px-6 py-4 rounded-2xl font-semibold">Home</button>
+      <button onclick="showTab(1)" class="tab px-6 py-4 rounded-2xl font-semibold">Oefeningen</button>
+      <button onclick="showTab(2)" class="tab px-6 py-4 rounded-2xl font-semibold">Dagelijkse Check-In</button>
+      <button onclick="showTab(3)" class="tab px-6 py-4 rounded-2xl font-semibold">SOS</button>
+      <button onclick="showTab(4)" class="tab px-6 py-4 rounded-2xl font-semibold">Progressie</button>
+      <button onclick="showTab(5)" class="tab px-6 py-4 rounded-2xl font-semibold">Coach</button>
+      <button onclick="showTab(6)" class="tab px-6 py-4 rounded-2xl font-semibold">Premium</button>
+    </div>
+  </section>  <section id="tab-0" class="tab-content fade"><div class="glass rounded-[36px] p-8 mb-8 bg-gradient-to-r from-teal-500 to-cyan-500 text-white overflow-hidden relative">
 
-  <div onclick="showExercise(1)" class="glass p-6 rounded-[28px] cursor-pointer hover:scale-[1.01] transition-all">
-    <h3 class="font-semibold text-xl">🌊 Floating Techniek</h3>
-    <p class="text-teal-700">De kern van Claire Weekes</p>
+  <div class="absolute right-0 top-0 text-[200px] opacity-10 font-black leading-none">
+    ★
   </div>
 
-  <div onclick="showExercise(2)" class="glass p-6 rounded-[28px] cursor-pointer hover:scale-[1.01] transition-all">
-    <h3 class="font-semibold text-xl">🧠 Tweede Angst Stoppen</h3>
-    <p class="text-teal-700">Stop de extra laag van angst</p>
+  <div class="relative z-10 max-w-3xl">
+    <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-2 rounded-full mb-5 font-semibold">
+      🔥 Meer dan alleen ontspanning
+    </div>
+
+    <h2 class="text-5xl font-extrabold leading-tight">
+      Een compleet herstelprogramma
+      voor paniek & angst.
+    </h2>
+
+    <p class="mt-6 text-xl opacity-95 leading-relaxed">
+      Gebaseerd op Claire Weekes,
+      neuroplasticiteit,
+      acceptatie en echte herstelervaring.
+    </p>
+
+    <div class="flex flex-wrap gap-4 mt-8">
+      <button onclick="showTab(6)"
+        class="bg-white text-teal-600 px-7 py-4 rounded-full font-bold shadow-2xl hover:scale-105 transition-all">
+        Bekijk Premium
+      </button>
+
+      <button onclick="showTab(1)"
+        class="bg-white/10 backdrop-blur border border-white/20 px-7 py-4 rounded-full font-semibold hover:bg-white/20 transition-all">
+        Gratis Oefeningen
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="grid md:grid-cols-3 gap-6 mb-8">
+
+  <div class="glass rounded-[32px] p-7">
+    <div class="text-4xl mb-4">🌊</div>
+    <h3 class="text-2xl font-bold">Floating</h3>
+    <p class="text-slate-600 mt-3 leading-relaxed">
+      Leer angst toelaten zonder verzet.
+    </p>
   </div>
 
-  <div onclick="showExercise(3)" class="glass p-6 rounded-[28px] cursor-pointer hover:scale-[1.01] transition-all">
-    <h3 class="font-semibold text-xl">🌊 Laat de Golf Komen</h3>
-    <p class="text-teal-700">Paniek toelaten zonder verzet</p>
+  <div class="glass rounded-[32px] p-7">
+    <div class="text-4xl mb-4">🧠</div>
+    <h3 class="text-2xl font-bold">Tweede Angst Stoppen</h3>
+    <p class="text-slate-600 mt-3 leading-relaxed">
+      Doorbreek de angstloop van adrenaline + weerstand.
+    </p>
   </div>
 
-  <div onclick="showExercise(4)" class="glass p-6 rounded-[28px] cursor-pointer hover:scale-[1.01] transition-all">
-    <h3 class="font-semibold text-xl">🚶 Floating Walk</h3>
-    <p class="text-teal-700">Lopen met spanning zonder vechten</p>
+  <div class="glass rounded-[32px] p-7">
+    <div class="text-4xl mb-4">📈</div>
+    <h3 class="text-2xl font-bold">Herstel Monitor</h3>
+    <p class="text-slate-600 mt-3 leading-relaxed">
+      Zie je groei stap voor stap.
+    </p>
+  </div>
+</div>
+
+<div class="glass rounded-[36px] p-8 md:p-10">
+  <div class="flex flex-wrap items-center justify-between gap-5">
+    <div>
+      <p class="text-sm uppercase tracking-wider text-teal-600 font-bold">
+        Vandaag Focus
+      </p>
+
+      <h3 class="text-4xl font-extrabold mt-3">
+        Laat de golf bewegen
+      </h3>
+
+      <p class="mt-4 text-slate-600 max-w-2xl text-lg leading-relaxed">
+        Je hoeft de spanning niet weg te krijgen.
+        Hoe minder je vecht,
+        hoe sneller het zenuwstelsel veiligheid leert.
+      </p>
+    </div>
+
+    <div class="bg-gradient-to-br from-teal-500 to-cyan-500 text-white rounded-[30px] p-8 w-full md:w-[320px] shadow-2xl">
+      <p class="opacity-80 text-sm uppercase font-semibold tracking-wider">
+        Dagelijkse Rustscore
+      </p>
+
+      <div class="text-6xl font-extrabold mt-3" id="dailyScore">72%</div>
+
+      <p class="mt-3 opacity-90">
+        Je zenuwstelsel leert langzaam veiligheid.
+      </p>
+    </div>
+  </div>
+</div>
+
+  </section>  <section id="tab-1" class="tab-content hidden fade"><div class="grid md:grid-cols-2 gap-6">
+
+  <div class="glass rounded-[36px] p-8">
+    <h3 class="text-3xl font-bold mb-6">🌊 Floating Sessie</h3>
+
+    <div class="breathing-circle"></div>
+
+    <div class="text-center mt-8">
+      <div id="floatingStep" class="text-2xl font-bold text-slate-800">
+        Laat het gevoel aanwezig zijn.
+      </div>
+
+      <p class="mt-4 text-slate-600 text-lg">
+        Vechten houdt adrenaline actief.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3 mt-8">
+      <button onclick="floatingResponse('resist')"
+        class="bg-rose-100 text-rose-700 py-4 rounded-2xl font-semibold hover:scale-[1.02] transition-all">
+        Ik voel weerstand
+      </button>
+
+      <button onclick="floatingResponse('allow')"
+        class="bg-teal-500 text-white py-4 rounded-2xl font-semibold hover:scale-[1.02] transition-all">
+        Ik laat het toe
+      </button>
+    </div>
+
+    <div id="floatingFeedback"
+      class="hidden mt-6 bg-teal-50 border border-teal-100 p-5 rounded-[24px] text-teal-800 text-lg leading-relaxed">
+    </div>
   </div>
 
-  <div onclick="showExercise(5)" class="glass p-6 rounded-[28px] cursor-pointer hover:scale-[1.01] transition-all">
-    <h3 class="font-semibold text-xl">🛏 Nachtelijke Angst</h3>
-    <p class="text-teal-700">Kalmeren tijdens angst in bed</p>
+  <div class="glass rounded-[36px] p-8">
+    <h3 class="text-3xl font-bold mb-6">🧠 Tweede Angst</h3>
+
+    <label class="block text-slate-600 mb-3 font-medium">
+      Wat voel je?
+    </label>
+
+    <select id="firstFear" class="w-full p-4 rounded-2xl border border-slate-200">
+      <option>Hartkloppingen</option>
+      <option>Duizeligheid</option>
+      <option>Paniek</option>
+      <option>Derealisatie</option>
+      <option>Misselijkheid</option>
+    </select>
+
+    <label class="block text-slate-600 mb-3 mt-6 font-medium">
+      Welke gedachte komt erbij?
+    </label>
+
+    <select id="secondFear" class="w-full p-4 rounded-2xl border border-slate-200">
+      <option>Ik verlies controle</option>
+      <option>Ik word gek</option>
+      <option>Ik ga dood</option>
+      <option>Ik kom hier nooit uit</option>
+    </select>
+
+    <button onclick="analyzeFear()"
+      class="mt-6 w-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-4 rounded-2xl font-semibold shadow-xl">
+      Analyseer Angstloop
+    </button>
+
+    <div id="fearAnalysis"
+      class="hidden mt-6 bg-amber-50 border border-amber-100 p-6 rounded-[24px] leading-relaxed text-lg text-slate-700">
+    </div>
   </div>
 
-  <div onclick="showExercise(6)" class="glass p-6 rounded-[28px] cursor-pointer hover:scale-[1.01] transition-all">
-    <h3 class="font-semibold text-xl">🫁 4-7-8 Ademhaling</h3>
-    <p class="text-teal-700">Zachte ademregulatie</p>
+  <div class="glass rounded-[36px] p-8">
+    <h3 class="text-3xl font-bold mb-6">🚶 Exposure Challenge</h3>
+
+    <label class="block text-slate-600 mb-3 font-medium">
+      Welke situatie oefen je?
+    </label>
+
+    <select class="w-full p-4 rounded-2xl border border-slate-200">
+      <option>Supermarkt</option>
+      <option>Trein</option>
+      <option>Restaurant</option>
+      <option>Autorijden</option>
+      <option>Alleen thuis</option>
+    </select>
+
+    <label class="block text-slate-600 mb-3 mt-6 font-medium">
+      Spanning vóór exposure
+    </label>
+
+    <input id="beforeSlider" type="range" min="1" max="10" value="8" class="w-full">
+
+    <label class="block text-slate-600 mb-3 mt-6 font-medium">
+      Spanning ná exposure
+    </label>
+
+    <input id="afterSlider" type="range" min="1" max="10" value="5" class="w-full">
+
+    <button onclick="saveExposure()"
+      class="mt-6 w-full bg-teal-500 text-white py-4 rounded-2xl font-semibold shadow-xl">
+      Exposure Opslaan
+    </button>
+
+    <div id="exposureResult"
+      class="hidden mt-6 bg-teal-50 border border-teal-100 p-5 rounded-[24px] text-teal-800 text-lg">
+    </div>
+  </div>
+
+  <div class="glass rounded-[36px] p-8 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+    <h3 class="text-3xl font-bold mb-6">🌙 Nachtelijke Rust</h3>
+
+    <div class="breathing-circle"></div>
+
+    <p class="mt-8 text-xl leading-relaxed opacity-90">
+      Je hoeft niet te slapen om te rusten.
+      Laat je lichaam zwaar worden.
+      Je bent veilig.
+    </p>
+
+    <button onclick="nightMessage()"
+      class="mt-8 bg-white/10 hover:bg-white/20 transition-all backdrop-blur px-6 py-4 rounded-2xl font-semibold border border-white/10">
+      Nieuwe Rustzin
+    </button>
   </div>
 
 </div>
 
-  </div>  <div id="tab-3" class="tab-content hidden fade">
-    <div class="glass rounded-[32px] p-8 text-center">
-      <h2 class="text-4xl font-bold mb-4">SOS Modus</h2><p id="sosText" class="text-2xl text-slate-700 leading-relaxed max-w-xl mx-auto">
-    Dit is adrenaline. Niet gevaarlijk.
+  </section>  <section id="tab-2" class="tab-content hidden fade"><div class="grid lg:grid-cols-2 gap-6">
+
+  <div class="glass rounded-[36px] p-8">
+    <h3 class="text-3xl font-bold mb-6">☀️ Dagelijkse Check-In</h3>
+
+    <label class="block text-slate-600 mb-3 font-medium">
+      Hoe gespannen voel je je vandaag?
+    </label>
+
+    <input id="stressSlider" type="range" min="1" max="10" value="5" class="w-full">
+
+    <div class="text-5xl font-extrabold mt-5 gradient-text" id="stressValue">5</div>
+
+    <label class="block text-slate-600 mb-3 mt-8 font-medium">
+      Hoe heb je geslapen?
+    </label>
+
+    <select class="w-full p-4 rounded-2xl border border-slate-200">
+      <option>Goed</option>
+      <option>Redelijk</option>
+      <option>Slecht</option>
+    </select>
+
+    <label class="block text-slate-600 mb-3 mt-8 font-medium">
+      Wat was je overwinning vandaag?
+    </label>
+
+    <textarea class="w-full p-5 rounded-[24px] border border-slate-200 min-h-[130px]"
+      placeholder="Bijvoorbeeld: ik ging toch naar buiten ondanks spanning..."></textarea>
+
+    <button onclick="saveCheckin()"
+      class="mt-6 w-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-4 rounded-2xl font-semibold shadow-xl">
+      Check-In Opslaan
+    </button>
+  </div>
+
+  <div class="glass rounded-[36px] p-8">
+    <h3 class="text-3xl font-bold mb-6">📊 Herstel Inzicht</h3>
+
+    <div class="space-y-6">
+
+      <div>
+        <div class="flex justify-between mb-2">
+          <span class="font-semibold">Floating</span>
+          <span>78%</span>
+        </div>
+
+        <div class="w-full bg-slate-100 h-4 rounded-full overflow-hidden">
+          <div class="bg-teal-500 h-full rounded-full" style="width:78%"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between mb-2">
+          <span class="font-semibold">Exposure</span>
+          <span>64%</span>
+        </div>
+
+        <div class="w-full bg-slate-100 h-4 rounded-full overflow-hidden">
+          <div class="bg-cyan-500 h-full rounded-full" style="width:64%"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between mb-2">
+          <span class="font-semibold">Acceptatie</span>
+          <span>82%</span>
+        </div>
+
+        <div class="w-full bg-slate-100 h-4 rounded-full overflow-hidden">
+          <div class="bg-emerald-500 h-full rounded-full" style="width:82%"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-10 bg-gradient-to-r from-teal-500 to-cyan-500 text-white p-7 rounded-[28px] shadow-2xl">
+      <h4 class="text-2xl font-bold">
+        Je herstel groeit.
+      </h4>
+
+      <p class="mt-4 opacity-90 text-lg leading-relaxed">
+        Terugvallen betekenen niet dat je opnieuw begint.
+        Je zenuwstelsel leert langzaam veiligheid.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+  </section>  <section id="tab-3" class="tab-content hidden fade">
+    <div class="glass rounded-[40px] p-10 text-center"><h2 class="text-5xl font-extrabold mb-6">
+    SOS Modus
+  </h2>
+
+  <div class="breathing-circle"></div>
+
+  <div id="sosMessage"
+    class="mt-8 text-3xl font-bold leading-relaxed max-w-3xl mx-auto">
+    Dit is adrenaline.
+    Niet gevaarlijk.
+  </div>
+
+  <p class="mt-6 text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+    Je hoeft niets op te lossen.
+    Laat de golf bewegen.
+    Je zenuwstelsel kan weer kalmeren.
   </p>
 
-  <div class="breathing"></div>
-
-  <button onclick="newSOS()" class="mt-6 bg-teal-500 hover:bg-teal-600 text-white px-6 py-4 rounded-full shadow-xl">
-    Nieuwe herinnering
+  <button onclick="newSOS()"
+    class="mt-10 bg-gradient-to-r from-rose-500 to-orange-400 text-white px-8 py-5 rounded-full font-bold text-lg shadow-2xl hover:scale-105 transition-all">
+    Nieuwe Herinnering
   </button>
 </div>
 
-  </div>  <div id="tab-4" class="tab-content hidden fade">
-    <h2 class="text-3xl font-bold mb-6">30 Dagen Herstelpad</h2><div class="space-y-4">
+  </section>  <section id="tab-4" class="tab-content hidden fade"><div class="grid lg:grid-cols-3 gap-6">
 
-  <div class="glass rounded-[28px] p-6">
-    <h3 class="font-bold text-xl mb-2">Week 1 — Begrijpen</h3>
-    <p class="text-slate-600">Leer hoe adrenaline en het zenuwstelsel werken.</p>
+  <div class="glass rounded-[36px] p-8 text-center">
+    <div class="text-6xl font-extrabold gradient-text">26</div>
+    <p class="mt-3 text-slate-600 text-lg">Dagen Actief</p>
   </div>
 
-  <div class="glass rounded-[28px] p-6">
-    <h3 class="font-bold text-xl mb-2">Week 2 — Accepteren</h3>
-    <p class="text-slate-600">Stop met vechten tegen gevoelens.</p>
+  <div class="glass rounded-[36px] p-8 text-center">
+    <div class="text-6xl font-extrabold gradient-text">42</div>
+    <p class="mt-3 text-slate-600 text-lg">Oefeningen Gedaan</p>
   </div>
 
-  <div class="glass rounded-[28px] p-6">
-    <h3 class="font-bold text-xl mb-2">Week 3 — Floating</h3>
-    <p class="text-slate-600">Blijf bewegen ondanks spanning.</p>
-  </div>
-
-  <div class="glass rounded-[28px] p-6">
-    <h3 class="font-bold text-xl mb-2">Week 4 — Vertrouwen</h3>
-    <p class="text-slate-600">Bouw vertrouwen op in herstel.</p>
+  <div class="glass rounded-[36px] p-8 text-center">
+    <div class="text-6xl font-extrabold gradient-text">18</div>
+    <p class="mt-3 text-slate-600 text-lg">Exposure Successen</p>
   </div>
 
 </div>
 
-  </div>  <div id="tab-5" class="tab-content hidden fade">
-    <div class="glass rounded-[32px] p-8">
-      <h2 class="text-3xl font-bold mb-6">Rustige Coach</h2><textarea id="coachInput"
-    class="w-full p-5 rounded-[24px] border border-slate-200 min-h-[160px]"
-    placeholder="Bijvoorbeeld: ik voel veel spanning in mijn borst..."></textarea>
+<div class="glass rounded-[40px] p-10 mt-8">
+  <div class="flex flex-wrap items-center justify-between gap-6">
+
+    <div>
+      <h3 class="text-4xl font-extrabold">
+        Herstelcurve
+      </h3>
+
+      <p class="mt-4 text-slate-600 text-lg max-w-2xl leading-relaxed">
+        Herstel is geen rechte lijn.
+        Soms voel je vooruitgang.
+        Soms meer spanning.
+        Beide horen bij herstel.
+      </p>
+    </div>
+
+    <div class="w-full lg:w-[400px]">
+      <div class="w-full bg-slate-100 h-6 rounded-full overflow-hidden">
+        <div id="recoveryBar"
+          class="bg-gradient-to-r from-teal-500 to-cyan-500 h-full rounded-full transition-all duration-700"
+          style="width:72%"></div>
+      </div>
+
+      <button onclick="increaseRecovery()"
+        class="mt-6 bg-teal-500 hover:bg-teal-600 text-white px-6 py-4 rounded-full font-semibold shadow-xl">
+        Ik heb vandaag geoefend
+      </button>
+    </div>
+  </div>
+</div>
+
+  </section>  <section id="tab-5" class="tab-content hidden fade"><div class="grid lg:grid-cols-3 gap-6 mb-8">
+
+  <div class="glass rounded-[32px] p-7 text-center">
+    <div class="text-5xl font-black gradient-text">4.9★</div>
+    <p class="mt-3 text-slate-600">Gemiddelde beoordeling</p>
+  </div>
+
+  <div class="glass rounded-[32px] p-7 text-center">
+    <div class="text-5xl font-black gradient-text">12K+</div>
+    <p class="mt-3 text-slate-600">Oefeningen voltooid</p>
+  </div>
+
+  <div class="glass rounded-[32px] p-7 text-center">
+    <div class="text-5xl font-black gradient-text">84%</div>
+    <p class="mt-3 text-slate-600">Voelt meer rust na 30 dagen</p>
+  </div>
+
+</div>
+
+<div class="glass rounded-[40px] p-10">
+  <h2 class="text-4xl font-extrabold mb-8">
+    Rustige Coach
+  </h2>
+
+  <textarea id="coachInput"
+    class="w-full p-6 rounded-[28px] border border-slate-200 min-h-[180px] text-lg"
+    placeholder="Bijvoorbeeld: ik voel veel spanning in mijn borst en ben bang dat het nooit overgaat..."></textarea>
 
   <button onclick="coachReply()"
-    class="mt-5 bg-teal-500 hover:bg-teal-600 text-white px-6 py-4 rounded-full shadow-xl">
-    Praat met coach
+    class="mt-6 bg-gradient-to-r from-teal-500 to-cyan-500 text-white px-8 py-5 rounded-full font-bold shadow-2xl hover:scale-105 transition-all">
+    Praat met Coach
   </button>
 
   <div id="coachResponse"
-    class="hidden mt-6 bg-teal-50 border border-teal-100 p-6 rounded-[24px] text-lg leading-relaxed text-slate-700">
+    class="hidden mt-8 bg-teal-50 border border-teal-100 rounded-[28px] p-8 text-lg leading-relaxed text-slate-700">
   </div>
 </div>
 
-  </div>  <div id="tab-6" class="tab-content hidden fade">
-    <div class="glass rounded-[32px] p-8 text-center overflow-hidden relative"><div class="absolute top-0 right-0 bg-amber-400 text-white px-4 py-2 rounded-bl-3xl font-bold shadow-lg">
-    PREMIUM
-  </div>
+  </section>  <section id="tab-6" class="tab-content hidden fade"><div class="glass rounded-[36px] p-8 mb-8 border border-amber-200 bg-gradient-to-r from-amber-50 to-orange-50">
+  <div class="flex flex-wrap items-center justify-between gap-6">
 
-  <h2 class="text-4xl font-bold mb-4">Premium Herstel</h2>
+    <div class="max-w-2xl">
+      <div class="inline-flex items-center gap-2 bg-amber-100 text-amber-700 px-4 py-2 rounded-full font-semibold mb-4">
+        🔥 Meest gekozen
+      </div>
 
-  <p class="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed">
-    Volledige begeleiding voor herstel van paniek, angst en een overbelast zenuwstelsel.
-  </p>
+      <h2 class="text-5xl font-extrabold leading-tight">
+        Herstel van angst begint
+        met een veilig zenuwstelsel.
+      </h2>
 
-  <div class="mt-8 text-5xl font-bold text-amber-500">
-    €39
-  </div>
+      <p class="mt-6 text-slate-700 text-xl leading-relaxed">
+        Krijg toegang tot het volledige herstelprogramma met audio’s,
+        dagelijkse begeleiding, premium oefeningen,
+        exposure coaching en diepere Claire Weekes sessies.
+      </p>
 
-  <p class="text-slate-500 mt-2">per jaar</p>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <div class="bg-white px-4 py-3 rounded-2xl shadow-sm">
+          ✅ 50+ oefeningen
+        </div>
 
-  <button class="mt-6 bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-full shadow-2xl text-lg font-semibold transition-all hover:scale-105">
-    Start Premium
-  </button>
+        <div class="bg-white px-4 py-3 rounded-2xl shadow-sm">
+          ✅ Dagelijkse coaching
+        </div>
 
-  <div class="grid md:grid-cols-2 gap-4 mt-10 text-left">
-
-    <div class="bg-white rounded-[24px] p-5 shadow-sm">
-      🎧 Diepe Floating Audio’s
+        <div class="bg-white px-4 py-3 rounded-2xl shadow-sm">
+          ✅ Nachtelijke paniek hulp
+        </div>
+      </div>
     </div>
 
-    <div class="bg-white rounded-[24px] p-5 shadow-sm">
+    <div class="bg-white rounded-[36px] p-8 shadow-2xl w-full md:w-[360px] border border-amber-100">
+
+      <div class="text-center">
+        <div class="text-sm uppercase tracking-wider text-amber-500 font-bold">
+          Premium Jaarplan
+        </div>
+
+        <div class="mt-4 text-7xl font-black text-slate-900">
+          €39
+        </div>
+
+        <div class="text-slate-500 mt-2">
+          per jaar
+        </div>
+
+        <button class="mt-8 w-full bg-gradient-to-r from-amber-400 to-orange-400 hover:scale-105 transition-all text-white py-5 rounded-2xl font-bold shadow-2xl text-lg">
+          Start Premium
+        </button>
+
+        <p class="mt-5 text-sm text-slate-500">
+          7 dagen tevredenheidsgarantie
+        </p>
+      </div>
+
+      <div class="mt-8 space-y-3 text-slate-700">
+        <div>🎧 Audio begeleiding</div>
+        <div>📈 Herstel dashboard</div>
+        <div>🧠 Dagelijkse reset oefeningen</div>
+        <div>🌙 Nachtmodus voor paniek</div>
+        <div>🚶 Exposure begeleiding</div>
+        <div>💬 Persoonlijke herstelcoach</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="bg-gradient-to-br from-amber-400 via-orange-400 to-amber-500 text-white rounded-[44px] p-10 shadow-2xl overflow-hidden relative">
+
+  <div class="absolute top-0 right-0 text-[180px] opacity-10 font-black leading-none">
+    ★
+  </div>
+
+  <div class="relative z-10 max-w-3xl">
+
+    <div class="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full font-semibold mb-6 backdrop-blur">
+      👑 Premium Recovery
+    </div>
+
+    <h2 class="text-5xl font-extrabold leading-tight">
+      Het volledige herstelprogramma
+    </h2>
+
+    <p class="mt-6 text-xl opacity-95 leading-relaxed">
+      Meer rust.
+      Meer begeleiding.
+      Meer vertrouwen in je zenuwstelsel.
+    </p>
+
+    <div class="mt-8 text-7xl font-black">
+      €39
+      <span class="text-2xl font-medium">/ jaar</span>
+    </div>
+
+    <button class="mt-8 bg-white text-orange-500 px-8 py-5 rounded-full font-bold text-lg shadow-2xl hover:scale-105 transition-all">
+      Start Premium
+    </button>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-5 mt-12 relative z-10">
+
+    <div class="bg-white/10 backdrop-blur rounded-[28px] p-6 border border-white/10">
+      🎧 Diepe Audio Sessies
+    </div>
+
+    <div class="bg-white/10 backdrop-blur rounded-[28px] p-6 border border-white/10">
       🌙 Nachtelijke Paniek Hulp
     </div>
 
-    <div class="bg-white rounded-[24px] p-5 shadow-sm">
-      📈 Herstel Progressie Tracker
+    <div class="bg-white/10 backdrop-blur rounded-[28px] p-6 border border-white/10">
+      🧠 Dagelijkse Coaching
     </div>
 
-    <div class="bg-white rounded-[24px] p-5 shadow-sm">
-      🧠 Dagelijkse Coach Berichten
+    <div class="bg-white/10 backdrop-blur rounded-[28px] p-6 border border-white/10">
+      🚶 Exposure Programma
     </div>
 
-    <div class="bg-white rounded-[24px] p-5 shadow-sm">
-      🚶 Exposure Begeleiding
+    <div class="bg-white/10 backdrop-blur rounded-[28px] p-6 border border-white/10">
+      📈 Persoonlijke Progressie
     </div>
 
-    <div class="bg-white rounded-[24px] p-5 shadow-sm">
+    <div class="bg-white/10 backdrop-blur rounded-[28px] p-6 border border-white/10">
       🔒 50+ Premium Oefeningen
     </div>
 
   </div>
 </div>
 
-  </div>  <div id="tab-7" class="tab-content hidden fade">
-    <div class="glass rounded-[32px] p-8"><h2 class="text-3xl font-bold mb-6">Interactieve Hersteltools</h2>
+  </section></main><script>
 
-  <div class="space-y-6">
-
-    <div class="bg-white rounded-[28px] p-6 shadow-sm">
-      <h3 class="text-2xl font-bold mb-4">📈 Mijn Herstelcurve</h3>
-
-      <div class="w-full bg-slate-100 rounded-full h-5 overflow-hidden">
-        <div id="recoveryBar" class="bg-teal-500 h-full rounded-full transition-all duration-700" style="width: 20%"></div>
-      </div>
-
-      <p class="mt-4 text-slate-600 leading-relaxed">
-        Herstel is geen rechte lijn.
-        Ups en downs horen erbij.
-      </p>
-
-      <button onclick="increaseRecovery()"
-        class="mt-5 bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-full">
-        Ik heb vandaag geoefend
-      </button>
-    </div>
-
-    <div class="bg-white rounded-[28px] p-6 shadow-sm">
-      <h3 class="text-2xl font-bold mb-4">🌊 Angstloop Visualisatie</h3>
-
-      <div class="grid md:grid-cols-4 gap-3 text-center">
-        <div class="bg-rose-50 p-4 rounded-2xl">Gedachte</div>
-        <div class="bg-amber-50 p-4 rounded-2xl">Angst</div>
-        <div class="bg-sky-50 p-4 rounded-2xl">Sensatie</div>
-        <div class="bg-violet-50 p-4 rounded-2xl">Meer Angst</div>
-      </div>
-
-      <p class="mt-5 text-slate-600">
-        Door acceptatie en AWARE doorbreek je deze cyclus.
-      </p>
-    </div>
-
-    <div class="bg-white rounded-[28px] p-6 shadow-sm">
-      <h3 class="text-2xl font-bold mb-4">🧭 Exposure Tracker</h3>
-
-      <label class="block mb-2 text-slate-600">Welke situatie oefende je?</label>
-
-      <select class="w-full p-4 rounded-2xl border border-slate-200">
-        <option>Supermarkt</option>
-        <option>Openbaar vervoer</option>
-        <option>Restaurant</option>
-        <option>Sociaal contact</option>
-        <option>Alleen thuis</option>
-      </select>
-
-      <label class="block mt-5 mb-2 text-slate-600">Hoeveel spanning voelde je?</label>
-
-      <input type="range" min="1" max="10" value="5" class="w-full">
-
-      <button class="mt-5 bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-full">
-        Opslaan
-      </button>
-    </div>
-
-    <div class="bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-[32px] p-8 shadow-2xl">
-      <h3 class="text-3xl font-bold mb-4">Persoonlijk Bericht van Joris</h3>
-
-      <p class="text-lg leading-relaxed opacity-95">
-        “Ik dacht echt dat ik nooit meer normaal zou worden.
-        Mijn zenuwstelsel stond constant aan.
-        Maar herstel is mogelijk.
-        Niet door harder te vechten,
-        maar door het systeem veiligheid te leren.”
-      </p>
-
-      <p class="mt-6 text-white/90 font-medium">
-        Gebaseerd op paniekenangst.nl en jouw herstelgids.
-      </p>
-    </div>
-
-  </div>
-</div>
-
-  </div></div>
-</div>
-  </div></div><div id="exercise-modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
-  <div class="bg-white max-w-2xl w-full rounded-[32px] max-h-[90vh] overflow-auto shadow-2xl">
-    <div class="p-8">
-      <button onclick="closeModal()" class="text-slate-500 mb-6">
-        ← Terug
-      </button><div id="modal-content"></div>
-</div>
-
-  </div>
-</div><script>
   function showTab(n) {
     document.querySelectorAll('.tab-content').forEach(tab => {
       tab.classList.add('hidden');
@@ -371,144 +739,99 @@
 
     document.getElementById('tab-' + n).classList.remove('hidden');
     document.querySelectorAll('.tab')[n].classList.add('tab-active');
-  }
 
-  function showExercise(id) {
-    const modal = document.getElementById('exercise-modal');
-    const content = document.getElementById('modal-content');
-
-    let html = '';
-
-    if(id === 1) {
-      html = `
-        <h2 class="text-3xl font-bold mb-6">🌊 Floating Techniek</h2>
-
-        <p class="text-lg leading-relaxed text-slate-700">
-          Floating betekent dat je de angst niet probeert te stoppen.
-          Je laat het gevoel bewegen zonder weerstand.
-        </p>
-
-        <div class="bg-teal-50 p-6 rounded-[24px] mt-6">
-          <p class="text-teal-800 font-medium text-lg">
-            “Ik laat dit gevoel bestaan. Ik hoef niet te vechten.”
-          </p>
-        </div>
-      `;
-    }
-
-    if(id === 2) {
-      html = `
-        <h2 class="text-3xl font-bold mb-6">🧠 Tweede Angst Stoppen</h2>
-
-        <p class="text-lg text-slate-700 leading-relaxed">
-          Eerste angst is de automatische adrenaline reactie.
-          Tweede angst ontstaat wanneer je bang wordt voor die sensaties.
-        </p>
-
-        <div class="bg-amber-50 p-6 rounded-[24px] mt-6">
-          <p class="font-medium text-amber-900">
-            Tweede angst houdt het zenuwstelsel actief.
-          </p>
-        </div>
-      `;
-    }
-
-    if(id === 3) {
-      html = `
-        <h2 class="text-3xl font-bold mb-6">🌊 Laat de Golf Komen</h2>
-
-        <p class="text-lg leading-relaxed text-slate-700">
-          Paniek voelt als een golf.
-          Laat de golf komen zonder verzet.
-          Ze stijgt en daalt vanzelf.
-        </p>
-      `;
-    }
-
-    if(id === 4) {
-      html = `
-        <h2 class="text-3xl font-bold mb-6">🚶 Floating Walk</h2>
-
-        <p class="text-lg leading-relaxed text-slate-700">
-          Loop langzaam terwijl spanning aanwezig is.
-          Je hoeft niets op te lossen.
-        </p>
-      `;
-    }
-
-    if(id === 5) {
-      html = `
-        <h2 class="text-3xl font-bold mb-6">🛏 Nachtelijke Angst</h2>
-
-        <p class="text-lg leading-relaxed text-slate-700">
-          Je hoeft niet perfect te slapen om te herstellen.
-          Laat je lichaam rusten zonder strijd.
-        </p>
-      `;
-    }
-
-    if(id === 6) {
-      html = `
-        <h2 class="text-3xl font-bold mb-6">🫁 4-7-8 Ademhaling</h2>
-
-        <p class="text-lg leading-relaxed text-slate-700">
-          Adem 4 seconden in.
-          Houd 7 seconden vast.
-          Adem 8 seconden langzaam uit.
-        </p>
-      `;
-    }
-
-    content.innerHTML = html;
-    modal.classList.remove('hidden');
-  }
-
-  function closeModal() {
-    document.getElementById('exercise-modal').classList.add('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function openSOS() {
     showTab(3);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   const sosMessages = [
     'Dit is adrenaline. Niet gevaarlijk.',
-    'Je hoeft dit gevoel niet te stoppen.',
     'Laat de golf komen en gaan.',
-    'Je zenuwstelsel leert veiligheid door acceptatie.',
-    'Paniek voelt intens maar is tijdelijk.'
+    'Je hoeft dit gevoel niet te stoppen.',
+    'Je zenuwstelsel leert veiligheid.',
+    'Paniek voelt intens maar is tijdelijk.',
+    'Niet vechten. Alleen toelaten.'
   ];
 
   function newSOS() {
     const random = sosMessages[Math.floor(Math.random() * sosMessages.length)];
-    document.getElementById('sosText').innerText = random;
+    document.getElementById('sosMessage').innerText = random;
   }
 
-  function coachReply() {
-    const input = document.getElementById('coachInput').value.toLowerCase();
-    const response = document.getElementById('coachResponse');
+  function floatingResponse(type) {
+    const feedback = document.getElementById('floatingFeedback');
 
-    let text = 'Laat gevoelens aanwezig zijn zonder verzet.';
+    feedback.classList.remove('hidden');
 
-    if(input.includes('hart')) {
-      text = 'Hartkloppingen zijn een adrenaline reactie. Niet gevaarlijk.';
+    if(type === 'resist') {
+      feedback.innerText = 'Weerstand is normaal. Merk het op zonder jezelf te veroordelen.';
+    } else {
+      feedback.innerText = 'Goed. Door toelaten leert je zenuwstelsel dat het veilig is.';
     }
+  }
 
-    if(input.includes('duizelig')) {
-      text = 'Duizeligheid ontstaat vaak door spanning en alertheid.';
-    }
+  function analyzeFear() {
+    const firstFear = document.getElementById('firstFear').value;
+    const secondFear = document.getElementById('secondFear').value;
+    const analysis = document.getElementById('fearAnalysis');
 
-    if(input.includes('paniek')) {
-      text = 'Paniek voelt intens maar is tijdelijk. Vecht niet tegen de golf.';
-    }
+    analysis.classList.remove('hidden');
 
-    if(input.includes('slaap')) {
-      text = 'Rust begint wanneer je stopt met vechten tegen wakker zijn.';
-    }
+    analysis.innerHTML = `
+      <strong>${firstFear}</strong> is een adrenaline reactie.
+      <br><br>
+      De gedachte <strong>“${secondFear}”</strong>
+      creëert tweede angst.
+      <br><br>
+      Tweede angst houdt het zenuwstelsel actief.
+      Door acceptatie en floating kan de cyclus langzaam afnemen.
+    `;
+  }
 
-    response.classList.remove('hidden');
-    response.innerText = text;
+  function saveExposure() {
+    const before = document.getElementById('beforeSlider').value;
+    const after = document.getElementById('afterSlider').value;
+
+    const result = document.getElementById('exposureResult');
+
+    result.classList.remove('hidden');
+
+    result.innerHTML = `
+      Spanning vóór exposure: <strong>${before}/10</strong><br>
+      Spanning ná exposure: <strong>${after}/10</strong><br><br>
+      Goed gedaan.
+      Het doel is niet geen spanning voelen.
+      Het doel is blijven bewegen ondanks spanning.
+    `;
+  }
+
+  const nightMessages = [
+    'Je hoeft niet te slapen om te rusten.',
+    'Laat je lichaam zwaar worden.',
+    'Je bent veilig in dit moment.',
+    'Rust ontstaat wanneer strijd afneemt.'
+  ];
+
+  function nightMessage() {
+    const random = nightMessages[Math.floor(Math.random() * nightMessages.length)];
+    alert(random);
+  }
+
+  const slider = document.getElementById('stressSlider');
+  const value = document.getElementById('stressValue');
+
+  slider.addEventListener('input', () => {
+    value.innerText = slider.value;
+  });
+
+  function saveCheckin() {
+    const score = Math.floor(Math.random() * 20) + 70;
+    document.getElementById('dailyScore').innerText = score + '%';
+
+    alert('Check-in opgeslagen. Kleine stappen zijn ook vooruitgang.');
   }
 
   function increaseRecovery() {
@@ -516,11 +839,42 @@
     let current = parseInt(bar.style.width);
 
     if(current < 100) {
-      current += 10;
+      current += 4;
       bar.style.width = current + '%';
     }
   }
 
+  function coachReply() {
+    const input = document.getElementById('coachInput').value.toLowerCase();
+    const response = document.getElementById('coachResponse');
+
+    let text = 'Je zenuwstelsel probeert je te beschermen. Laat gevoelens bestaan zonder strijd.';
+
+    if(input.includes('hart')) {
+      text = 'Hartkloppingen zijn een adrenaline reactie. Intens, maar niet gevaarlijk.';
+    }
+
+    if(input.includes('duizelig')) {
+      text = 'Duizeligheid ontstaat vaak door spanning en hyperalertheid.';
+    }
+
+    if(input.includes('paniek')) {
+      text = 'Paniek voelt overweldigend, maar het is een golf van adrenaline die weer afneemt.';
+    }
+
+    if(input.includes('slaap')) {
+      text = 'Je hoeft niet perfect te slapen om te herstellen. Rust begint wanneer strijd afneemt.';
+    }
+
+    if(input.includes('controle')) {
+      text = 'Hoe meer je probeert te controleren, hoe actiever het zenuwstelsel blijft. Oefen met toelaten.';
+    }
+
+    response.classList.remove('hidden');
+    response.innerText = text;
+  }
+
   showTab(0);
+
 </script></body>
 </html>
