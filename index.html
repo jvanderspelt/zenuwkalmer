@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZenuwKalmer • Paniek & Angst</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
   <style>
     body { font-family: system-ui, sans-serif; }
@@ -35,75 +34,48 @@
     </div>
   </div>
 
+  <!-- Navigatie -->
   <div class="grid grid-cols-4 gap-2 bg-white p-1 rounded-3xl shadow mb-10">
-    <button onclick="showTab(0)" class="tab py-3 rounded-3xl font-medium tab-active">Home</button>
-    <button onclick="showTab(1)" class="tab py-3 rounded-3xl font-medium">Gids</button>
-    <button onclick="showTab(2)" class="tab py-3 rounded-3xl font-medium">Oefeningen</button>
+    <button onclick="showTab(0)" class="tab py-3 rounded-3xl font-medium">Home</button>
+    <button onclick="showTab(1)" class="tab py-3 rounded-3xl font-medium">Verhaal</button>
+    <button onclick="showTab(2)" class="tab py-3 rounded-3xl font-medium tab-active">Oefeningen</button>
     <button onclick="showTab(3)" class="tab py-3 rounded-3xl font-medium bg-amber-500 text-white">Premium</button>
   </div>
 
-  <!-- HOME -->
-  <div id="tab-0" class="tab-content">
-    <div class="card p-8 rounded-3xl">
-      <p class="text-teal-700 font-medium">💡 Tip van vandaag</p>
-      <p class="mt-3">"Laat de angst er zijn. Vecht er niet tegen. Float erdoorheen."</p>
-    </div>
-  </div>
-
-  <!-- GIDS (PDF inhoud) -->
-  <div id="tab-1" class="tab-content hidden space-y-8">
-    <h2 class="text-2xl font-bold">De Gids</h2>
-    <div class="card p-8 rounded-3xl">
-      <h3 class="font-semibold mb-4">Floating Techniek - Claire Weekes</h3>
-      <p class="text-slate-700">Floating betekent dat je de angst toelaat zonder weerstand. Je drijft mee als een blaadje op het water. Geen vechten, geen analyseren — gewoon laten zijn.</p>
-      <button onclick="playAudio(1)" class="mt-4 text-teal-600">▶️ Luister audio (5 min)</button>
-    </div>
-    <div class="card p-8 rounded-3xl">
-      <h3 class="font-semibold mb-4">AWARE Methode</h3>
-      <p class="text-slate-700">Accept • Watch • Act normaal • Repeat • Expect ups & downs</p>
-    </div>
-    <div class="card p-8 rounded-3xl">
-      <h3 class="font-semibold mb-4">Eerste vs Tweede Angst</h3>
-      <p class="text-slate-700">Eerste angst is een normale reactie. Tweede angst is angst voor de angst. Leer de tweede angst niet serieus te nemen.</p>
-    </div>
-  </div>
-
-  <!-- OEFENINGEN -->
-  <div id="tab-2" class="tab-content hidden">
+  <!-- OEFENINGEN TAB (hoofdscherm) -->
+  <div id="tab-2" class="tab-content">
     <h2 class="text-2xl font-bold mb-6">Oefeningen</h2>
-    <div class="space-y-4">
-      <div onclick="playAudio(1)" class="card p-6 rounded-3xl cursor-pointer">🌊 Floating Techniek</div>
-      <div onclick="playAudio(2)" class="card p-6 rounded-3xl cursor-pointer">🧭 AWARE Methode</div>
-      <div onclick="alert('4-7-8 gestart')" class="card p-6 rounded-3xl cursor-pointer">🫁 4-7-8 Ademhaling</div>
-      <div onclick="alert('5-4-3-2-1 gestart')" class="card p-6 rounded-3xl cursor-pointer">🌍 5-4-3-2-1 Aarden</div>
+   
+    <div onclick="showExercise(1)" class="card p-6 rounded-3xl cursor-pointer mb-4 hover:shadow-md">
+      <h3 class="font-semibold text-lg">🌊 Floating Techniek - Claire Weekes</h3>
+      <p class="text-teal-600 text-sm">De belangrijkste techniek om angst los te laten</p>
+    </div>
+
+    <div onclick="showExercise(2)" class="card p-6 rounded-3xl cursor-pointer mb-4 hover:shadow-md">
+      <h3 class="font-semibold text-lg">🧭 AWARE Methode</h3>
+      <p class="text-teal-600 text-sm">Accept • Watch • Act • Repeat • Expect</p>
+    </div>
+
+    <div onclick="showExercise(3)" class="card p-6 rounded-3xl cursor-pointer mb-4 hover:shadow-md">
+      <h3 class="font-semibold text-lg">🫁 4-7-8 Ademhaling</h3>
+    </div>
+
+    <div onclick="showExercise(4)" class="card p-6 rounded-3xl cursor-pointer hover:shadow-md">
+      <h3 class="font-semibold text-lg">🌍 5-4-3-2-1 Aarden</h3>
     </div>
   </div>
 
-  <!-- PREMIUM -->
-  <div id="tab-3" class="tab-content hidden">
-    <div class="card p-8 rounded-3xl">
-      <h2 class="text-3xl font-bold mb-4">Premium</h2>
-      <p class="mb-8">Volledige toegang + exclusieve content:</p>
-      <ul class="space-y-3 mb-10">
-        <li>✅ Alle audio-begeleidingen met mijn stem</li>
-        <li>✅ Volledige PDF + extra werkboeken</li>
-        <li>✅ Geavanceerde herstel-tracker</li>
-        <li>✅ Maandelijkse updates</li>
-      </ul>
+</div>
 
-      <button onclick="goToPayment('lifetime')" class="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white py-6 rounded-3xl text-xl font-bold mb-4">
-        €39 eenmalig — Lifetime
-      </button>
-
-      <button onclick="goToPayment('yearly')" class="w-full bg-teal-600 text-white py-6 rounded-3xl text-xl font-bold">
-        €49 per jaar
-      </button>
+<!-- Modal voor oefening -->
+<div id="exercise-modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+  <div class="bg-white max-w-2xl w-full mx-4 rounded-3xl max-h-[90vh] overflow-auto">
+    <div class="p-6">
+      <button onclick="closeModal()" class="text-gray-500 mb-4">← Terug</button>
+      <div id="modal-content" class="prose"></div>
     </div>
   </div>
 </div>
-
-<!-- Audio Player -->
-<audio id="audioPlayer" class="hidden"></audio>
 
 <script>
 function showTab(n) {
@@ -111,30 +83,38 @@ function showTab(n) {
   document.getElementById('tab-' + n).classList.remove('hidden');
 }
 
-function playAudio(id) {
-  const player = document.getElementById('audioPlayer');
-  // Vervang met jouw echte audio URLs
-  const urls = {
-    1: "https://your-audio-link/floating.mp3",
-    2: "https://your-audio-link/aware.mp3"
-  };
-  player.src = urls[id] || "#";
-  player.play();
-  alert("Audio gestart (vervang link met jouw opname)");
+function showExercise(id) {
+  const modal = document.getElementById('exercise-modal');
+  const content = document.getElementById('modal-content');
+
+  if (id === 1) {
+    content.innerHTML = `
+      <h2 class="text-2xl font-bold mb-4">🌊 Floating Techniek - Claire Weekes</h2>
+      <p class="text-slate-700 leading-relaxed">Floating betekent dat je de angst volledig toelaat zonder weerstand.</p>
+      <p class="text-slate-700 leading-relaxed mt-4">Stel je voor dat je een blaadje bent op een rivier. Je hoeft niet te zwemmen of te vechten tegen de stroom. Je laat je gewoon mee drijven.</p>
+      <p class="text-slate-700 leading-relaxed mt-4">Zeg tegen jezelf:<br><strong>"Ik laat dit er zijn. Ik vecht er niet tegen. Ik drijf erdoorheen."</strong></p>
+      <p class="mt-6 text-teal-600 font-medium">Dit is één van de krachtigste technieken om de angstloop te doorbreken.</p>
+    `;
+  } else if (id === 2) {
+    content.innerHTML = `<h2 class="text-2xl font-bold mb-4">🧭 AWARE Methode</h2><p class="text-slate-700">Accept • Watch • Act normaal • Repeat • Expect ups & downs</p>`;
+  } else {
+    content.innerHTML = `<h2 class="text-2xl font-bold">Oefening gestart</h2><p class="mt-4">Premium gebruikers krijgen hier audio-begeleiding met mijn stem.</p>`;
+  }
+
+  modal.classList.remove('hidden');
 }
 
-function goToPayment(type) {
-  const links = {
-    lifetime: "https://lemonsqueezy.com/your-lifetime-link",   // ← Vul hier jouw echte link in
-    yearly: "https://lemonsqueezy.com/your-yearly-link"       // ← Vul hier jouw echte link in
-  };
-  window.open(links[type], '_blank');
+function closeModal() {
+  document.getElementById('exercise-modal').classList.add('hidden');
 }
 
-// Start
-showTab(0);
+// Start op Oefeningen tab
+showTab(2);
 </script>
 </body>
 </html>
+
+
+
 
   
